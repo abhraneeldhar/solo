@@ -9,7 +9,6 @@
     height: 100%;
     display: flex;
     flex-direction: column;
-    align-items: center;
     color: white;
     padding: 50px;
     padding-top: 40px;
@@ -54,15 +53,14 @@
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
+    align-items: center;
 }
 
 .languageCard {
     display: flex;
     flex-direction: column;
     gap: 10px;
-    /* align-items: center; */
     width: 250px;
-    /* max-height: 200px; */
     padding: 10px;
     border-radius: 20px;
     border: 2px solid rgba(255, 255, 255, 0.152);
