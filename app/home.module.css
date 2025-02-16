@@ -12,13 +12,33 @@
     color: white;
     padding: 50px;
     padding-top: 40px;
+    position: relative;
 }
+
+.visits{
+    position: absolute;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    top: 10px;
+    left: 10px;
+    font-family: monospace;
+    font-size: 15px;
+}
+.ninja{
+    height: 20px;
+    width: 20px;
+    border-radius: 5px;
+}
+
 
 .bigHeader {
     text-align: center;
     font-weight: 600;
     font-size: 70px;
+    position: relative;
 }
+
 
 .bigHeader span {
     color: rgb(132, 250, 152);
@@ -180,9 +200,7 @@
         margin-top: 0;
         gap: 10px;
         grid-template-columns: repeat(auto-fit, minmax(35vw, 1fr));
-
     }
-
     .languageCard {
         width: 45vw;
         height: 40vw;
@@ -201,5 +219,8 @@
 
     .languageCard h1 {
         font-size: 5vw;
+    }
+    .visits{
+        display: none;
     }
 }

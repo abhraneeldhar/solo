@@ -8,6 +8,9 @@ import javascript from "../public/languageLogos/javascript.png"
 import css from "../public/languageLogos/css.png"
 import html from "../public/languageLogos/html.png"
 import nextjs from "../public/languageLogos/nextjs.png"
+import ninja from "../public/ninja.png"
+
+
 interface cardDetailType {
   name: string,
   image: StaticImageData,
@@ -55,6 +58,7 @@ export default function Home() {
   }
   return (<>
     <div className={styles.homemain}>
+      <div className={styles.visits}><Image className={styles.ninja} src={ninja} alt=""/><h1>4000 visits</h1></div>
       <h1 className={styles.bigHeader}>solo <span>Dev</span></h1>
       <p className={styles.headerPara}>Quick cheat sheets for popular programming languages and frameworks<br /> For and by one man teams</p>
       <input className={styles.searchInput} placeholder="Search for popular languages and frameworks..." />
