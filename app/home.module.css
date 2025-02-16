@@ -21,7 +21,8 @@
 }
 
 .bigHeader span {
-    color: rgb(200, 248, 208);
+    color: rgb(132, 250, 152);
+    filter: drop-shadow(0px 0px 30px rgb(132, 250, 152)); 
 }
 
 .headerPara {
@@ -66,7 +67,7 @@
     padding: 10px;
     border-radius: 20px;
     border: 2px solid rgba(255, 255, 255, 0.152);
-    animation: slideIn 0.3s;
+    animation: slideIn 0.5s ease-in;
     transition: all 0.2s;
     margin: 0px auto;
     overflow: hidden;
@@ -108,6 +109,10 @@
 .languageCard h1 {
     text-align: center;
     font-size: 25px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 .Python {
@@ -115,30 +120,33 @@
 }
 
 .Python img {
-    filter: drop-shadow(0px 0px 30px  #3772a3);
+    filter: drop-shadow(0px 0px 30px #3772a3);
 }
 
 .Javascript {
     background-color: rgba(251, 215, 37, 0.3);
 }
-.Javascript img{
-    filter: drop-shadow(0px 0px 30px  #fbd725);
+
+.Javascript img {
+    filter: drop-shadow(0px 0px 30px #fbd725);
 
 }
 
 .HTML {
     background-color: rgba(241, 101, 41, 0.3);
 }
-.HTML img{
-    filter: drop-shadow(0px 0px 30px  #f16529);
+
+.HTML img {
+    filter: drop-shadow(0px 0px 30px #f16529);
 
 }
 
 .CSS {
     background-color: rgba(38, 77, 228, 0.3);
 }
-.CSS img{
-    filter: drop-shadow(0px 0px 30px  #2965f1);
+
+.CSS img {
+    filter: drop-shadow(0px 0px 30px #2965f1);
 
 }
 
@@ -147,43 +155,51 @@
 }
 
 
-@media(max-width:500px){
-    .homemain{
+@media(max-width:500px) {
+    .homemain {
         padding: 10px;
     }
-    .bigHeader{
+
+    .bigHeader {
         font-size: 45px;
     }
-    .headerPara{
+
+    .headerPara {
         font-size: 15px;
         padding: 0px 10px;
     }
-    .searchInput{
+
+    .searchInput {
         font-size: 15px;
         width: 97%;
         padding: 10px 20px;
         border-radius: 10px;
     }
-    .languageCardHolder{
+
+    .languageCardHolder {
         margin-top: 0;
         gap: 10px;
         grid-template-columns: repeat(auto-fit, minmax(35vw, 1fr));
 
     }
-    .languageCard{
+
+    .languageCard {
         width: 45vw;
         height: 40vw;
         gap: 0;
     }
-    .languageCard .terminalIcon{
+
+    .languageCard .terminalIcon {
         height: 10vw;
         width: 10vw;
     }
-    .languageCard .logo img{
+
+    .languageCard .logo img {
         height: 12vw;
         width: 12vw;
     }
-    .languageCard h1{
+
+    .languageCard h1 {
         font-size: 5vw;
     }
 }
