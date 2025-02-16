@@ -56,7 +56,7 @@ export default function Home() {
   return (<>
     <div className={styles.homemain}>
       <h1 className={styles.bigHeader}>solo <span>Dev</span></h1>
-      <p className={styles.headerPara}>Quick reference guides for popular programming languages and frameworks.<br /> For devs with noob batchmates</p>
+      <p className={styles.headerPara}>Quick cheat sheets for popular programming languages and frameworks<br /> For and by one man teams</p>
       <input className={styles.searchInput} placeholder="Search for popular languages and frameworks..." />
 
       <div className={styles.languageCardHolder}>
