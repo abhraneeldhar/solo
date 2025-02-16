@@ -69,6 +69,7 @@
     animation: slideIn 0.3s;
     transition: all 0.2s;
     margin: 0px auto;
+    overflow: hidden;
 }
 
 @keyframes slideIn {
@@ -113,18 +114,76 @@
     background: rgba(78, 163, 233, 0.3);
 }
 
+.Python img {
+    filter: drop-shadow(0px 0px 30px  #3772a3);
+}
+
 .Javascript {
     background-color: rgba(251, 215, 37, 0.3);
+}
+.Javascript img{
+    filter: drop-shadow(0px 0px 30px  #fbd725);
+
 }
 
 .HTML {
     background-color: rgba(241, 101, 41, 0.3);
 }
+.HTML img{
+    filter: drop-shadow(0px 0px 30px  #f16529);
+
+}
 
 .CSS {
     background-color: rgba(38, 77, 228, 0.3);
 }
+.CSS img{
+    filter: drop-shadow(0px 0px 30px  #2965f1);
+
+}
 
 .NEXTjs {
     background-color: black;
+}
+
+
+@media(max-width:500px){
+    .homemain{
+        padding: 10px;
+    }
+    .bigHeader{
+        font-size: 45px;
+    }
+    .headerPara{
+        font-size: 15px;
+        padding: 0px 10px;
+    }
+    .searchInput{
+        font-size: 15px;
+        width: 97%;
+        padding: 10px 20px;
+        border-radius: 10px;
+    }
+    .languageCardHolder{
+        margin-top: 0;
+        gap: 10px;
+        grid-template-columns: repeat(auto-fit, minmax(35vw, 1fr));
+
+    }
+    .languageCard{
+        width: 45vw;
+        height: 40vw;
+        gap: 0;
+    }
+    .languageCard .terminalIcon{
+        height: 10vw;
+        width: 10vw;
+    }
+    .languageCard .logo img{
+        height: 12vw;
+        width: 12vw;
+    }
+    .languageCard h1{
+        font-size: 5vw;
+    }
 }

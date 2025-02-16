@@ -61,7 +61,7 @@ export default function Home() {
 
       <div className={styles.languageCardHolder}>
 
-        {cards.map((cardInfo) => (<DisplayCard cardInfo={cardInfo} />))}
+        {cards.map((cardInfo) => (<DisplayCard key={cardInfo.name} cardInfo={cardInfo} />))}
 
       </div>
     </div>
