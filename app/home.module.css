@@ -54,6 +54,9 @@
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+
 }
 
 .languageCard {
@@ -66,6 +69,7 @@
     border: 2px solid rgba(255, 255, 255, 0.152);
     animation: slideIn 0.3s;
     transition: all 0.2s;
+    margin: 0px auto;
 }
 
 @keyframes slideIn {
