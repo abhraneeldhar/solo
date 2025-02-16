@@ -9,75 +9,121 @@
     height: 100%;
     display: flex;
     flex-direction: column;
+    align-items: center;
     color: white;
     padding: 50px;
     padding-top: 40px;
 }
 
-.bigHeader{
+.bigHeader {
     text-align: center;
     font-weight: 600;
     font-size: 70px;
 }
-.bigHeader span{
+
+.bigHeader span {
     color: rgb(200, 248, 208);
 }
-.headerPara{
+
+.headerPara {
     font-size: 20px;
     font-weight: 400;
     text-align: center;
     color: rgba(255, 255, 255, 0.575);
 }
 
-.searchInput{
+.searchInput {
     width: 60%;
     font-size: 20px;
     padding: 30px 40px;
     border-radius: 15px;
     margin: 30px auto;
-    background-color:#1f1f21;
+    background-color: #1f1f21;
 }
-.searchInput:focus, .searchInput:active{
+
+.searchInput:focus,
+.searchInput:active {
     outline: none;
     border: none;
 }
 
-.languageCardHolder{
+.languageCardHolder {
     margin-top: 40px;
+    gap: 30px;
     display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
 }
-.languageCard{
+
+.languageCard {
     display: flex;
     flex-direction: column;
     gap: 10px;
     /* align-items: center; */
-    width: 270px;
-    max-height: 220px;
+    width: 250px;
+    /* max-height: 200px; */
     padding: 10px;
     border-radius: 20px;
     border: 2px solid rgba(255, 255, 255, 0.152);
+    animation: slideIn 0.3s;
+    transition: all 0.2s;
 }
-.terminalIcon{
-    height: 50px;
-    width: 50px;
+
+@keyframes slideIn {
+    0% {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+}
+
+.languageCard:hover {
+    transform: scale(1.04) translateY(-5px);
+}
+
+.terminalIcon {
+    height: 40px;
+    width: 40px;
+    aspect-ratio: 1;
     display: flex;
     background-color: black;
     padding: 10px;
     border-radius: 10px;
-
 }
-.languageCard .logo{
+
+.languageCard .logo {
     display: flex;
     justify-content: center;
     margin-bottom: 15px;
 }
-.languageCard .logo img{
+
+.languageCard .logo img {
     height: 75px;
     width: 75px;
     object-fit: contain;
-    /* background-color: black; */
 }
-.languageCard h1{
+
+.languageCard h1 {
     text-align: center;
     font-size: 25px;
+}
+
+.Python {
+    background: rgba(78, 163, 233, 0.3);
+}
+
+.Javascript {
+    background-color: rgba(251, 215, 37, 0.3);
+}
+
+.HTML {
+    background-color: rgba(241, 101, 41, 0.3);
+}
+
+.CSS {
+    background-color: rgba(38, 77, 228, 0.3);
+}
+
+.NEXTjs {
+    background-color: black;
 }
