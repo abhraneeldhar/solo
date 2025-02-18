@@ -73,7 +73,7 @@ export default function HTML() {
             <hr className="ruleTypeShi" />
             <h1 className="topic1">Element Tags</h1>
 
-            <h1 className="topic2">Text & Structure</h1>
+            <h1 className="topic2"><CheckCheck/>Text & Structure</h1>
             <div className="textSection">
                 <h1 className="topic3">Paragraphs & Headings</h1>
                 <CodeSnippet code={
@@ -90,7 +90,7 @@ export default function HTML() {
                 } />
             </div>
 
-            <h1 className="topic2">Containers</h1>
+            <h1 className="topic2"><CheckCheck/>Containers</h1>
             <div className="textSection">
                 <CodeSnippet code={
                     `<div>Block container</div>
@@ -100,7 +100,7 @@ export default function HTML() {
                 } />
             </div>
 
-            <h1 className="topic2">Lists</h1>
+            <h1 className="topic2"><CheckCheck/>Lists</h1>
             <div className="textSection">
                 <CodeSnippet code={
                     `<ul>          <!-- Unordered list -->
@@ -114,7 +114,7 @@ export default function HTML() {
                 } />
             </div>
 
-            <h1 className="topic2">Forms</h1>
+            <h1 className="topic2"><CheckCheck/>Forms</h1>
             <div className="textSection">
                 <CodeSnippet code={
                     `<input type="text" placeholder="Enter text">
@@ -129,7 +129,7 @@ export default function HTML() {
                 } />
             </div>
 
-            <h1 className="topic2">Tables</h1>
+            <h1 className="topic2"><CheckCheck/>Tables</h1>
             <div className="textSection">
                 <CodeSnippet code={
                     `<table>
@@ -147,7 +147,7 @@ export default function HTML() {
                 } />
             </div>
 
-            <h1 className="topic2">Semantic Elements</h1>
+            <h1 className="topic2"><CheckCheck/>Semantic Elements</h1>
             <div className="textSection">
                 <CodeSnippet code={
                     `<header>Site header</header>

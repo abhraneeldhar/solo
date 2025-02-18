@@ -11,7 +11,7 @@ export default function Javascript() {
 
             <h1 className="topic1">Syntax & Basics</h1>
 
-            <h1 className="topic2">Variables</h1>
+            <h1 className="topic2"><CheckCheck/>Variables</h1>
             <div className="textSection">
                 <CodeSnippet code={
                     `let mutableVar = 10;       // Block-scoped, reassignable
@@ -20,7 +20,7 @@ var functionScoped = 30;  // Avoid (hoisting, function scope)`
                 } />
             </div>
 
-            <h1 className="topic2">Data Types</h1>
+            <h1 className="topic2"><CheckCheck/>Data Types</h1>
             <div className="textSection">
                 <CodeSnippet code={
                     `// Primitives
@@ -38,7 +38,7 @@ const func = () => {};`
                 } />
             </div>
 
-            <h1 className="topic2">Conditionals</h1>
+            <h1 className="topic2"><CheckCheck/>Conditionals</h1>
             <div className="textSection">
                 <CodeSnippet code={
                     `// If-else
@@ -58,7 +58,7 @@ switch(day) {
                 } />
             </div>
 
-            <h1 className="topic2">Loops</h1>
+            <h1 className="topic2"><CheckCheck/>Loops</h1>
             <div className="textSection">
                 <CodeSnippet code={
                     `// Traditional
@@ -71,7 +71,7 @@ const newArr = arr.map(item => item * 2);`
                 } />
             </div>
 
-            <h1 className="topic2">Functions</h1>
+            <h1 className="topic2"><CheckCheck/>Functions</h1>
             <div className="textSection">
                 <CodeSnippet code={
                     `// Function Declaration
@@ -85,7 +85,7 @@ const multiply = (a, b) => a * b;
                 } />
             </div>
 
-            <h1 className="topic2">Template Literals</h1>
+            <h1 className="topic2"><CheckCheck/>Template Literals</h1>
             <div className="textSection">
                 <CodeSnippet code={
                     `const name = 'Alice';
@@ -98,7 +98,7 @@ string example\`);`
             <hr className="ruleTypeShi" />
             <h1 className="topic1">Common Operations</h1>
 
-            <h1 className="topic2">DOM Manipulation</h1>
+            <h1 className="topic2"><CheckCheck/>DOM Manipulation</h1>
             <div className="textSection">
                 <CodeSnippet code={
                     `// Select elements
@@ -111,7 +111,7 @@ list.innerHTML = '<li>New Item</li>';`
                 } />
             </div>
 
-            <h1 className="topic2">Event Handling</h1>
+            <h1 className="topic2"><CheckCheck/>Event Handling</h1>
             <div className="textSection">
                 <CodeSnippet code={
                     `// Single element
@@ -126,7 +126,7 @@ document.body.addEventListener('click', e => {
                 } />
             </div>
 
-            <h1 className="topic2">Client-Side Storage</h1>
+            <h1 className="topic2"><CheckCheck/>Client-Side Storage</h1>
             <div className="textSection">
                 <CodeSnippet code={
                     `// Local Storage
@@ -141,7 +141,7 @@ document.cookie = 'username=John; expires=Thu, 18 Dec 2025 12:00:00 UTC; path=/'
             <hr className="ruleTypeShi" />
             <h1 className="topic1">Data Structures</h1>
 
-            <h1 className="topic2">Arrays</h1>
+            <h1 className="topic2"><CheckCheck/>Arrays</h1>
             <div className="textSection">
                 <CodeSnippet code={
                     `// Common Methods
@@ -169,7 +169,7 @@ map.set('key', 'value');`
                 }/>
             </div>
 
-            <h1 className="topic2">Weak Collections</h1>
+            <h1 className="topic2"><CheckCheck/>Weak Collections</h1>
             <div className="textSection">
                 <CodeSnippet code={
                     `// WeakMap (Keys must be objects)
@@ -182,7 +182,7 @@ weakMap.set(objKey, 'private data');`
             <hr className="ruleTypeShi" />
             <h1 className="topic1">Object-Oriented JS</h1>
 
-            <h1 className="topic2">Classes</h1>
+            <h1 className="topic2"><CheckCheck/>Classes</h1>
             <div className="textSection">
                 <CodeSnippet code={
                     `class Person {
@@ -202,7 +202,7 @@ weakMap.set(objKey, 'private data');`
                 } />
             </div>
 
-            <h1 className="topic2">Prototypes & Inheritance</h1>
+            <h1 className="topic2"><CheckCheck/>Prototypes & Inheritance</h1>
             <div className="textSection">
                 <CodeSnippet code={
                     `function Animal(name) {
@@ -216,7 +216,7 @@ class Dog extends Animal {
                 } />
             </div>
 
-            <h1 className="topic2">Context Binding</h1>
+            <h1 className="topic2"><CheckCheck/>Context Binding</h1>
             <div className="textSection">
                 <CodeSnippet code={
                     `// Preserve 'this' context
@@ -229,7 +229,7 @@ boundFunc.apply(context, args);`
             <hr className="ruleTypeShi" />
             <h1 className="topic1">Asynchronous JS</h1>
 
-            <h1 className="topic2">Promises</h1>
+            <h1 className="topic2"><CheckCheck/>Promises</h1>
             <div className="textSection">
                 <CodeSnippet code={
                     `fetch('url')
@@ -240,7 +240,7 @@ boundFunc.apply(context, args);`
                 } />
             </div>
 
-            <h1 className="topic2">Async/Await</h1>
+            <h1 className="topic2"><CheckCheck/>Async/Await</h1>
             <div className="textSection">
                 <CodeSnippet code={
                     `async function fetchData() {
@@ -254,7 +254,7 @@ boundFunc.apply(context, args);`
                 } />
             </div>
 
-            <h1 className="topic2">Event Loop</h1>
+            <h1 className="topic2"><CheckCheck/>Event Loop</h1>
             <div className="textSection">
                 <strong>Microtasks Queue:</strong> Processes promises and MutationObserver callbacks<br />
                 <strong>Macrotasks Queue:</strong> Handles setTimeout, DOM events, I/O
@@ -263,7 +263,7 @@ boundFunc.apply(context, args);`
             <hr className="ruleTypeShi" />
             <h1 className="topic1">Error Handling</h1>
 
-            <h1 className="topic2">try/catch</h1>
+            <h1 className="topic2"><CheckCheck/>try/catch</h1>
             <div className="textSection">
                 <CodeSnippet code={
                     `try {
@@ -276,7 +276,7 @@ boundFunc.apply(context, args);`
                 } />
             </div>
 
-            <h1 className="topic2">Custom Errors</h1>
+            <h1 className="topic2"><CheckCheck/>Custom Errors</h1>
             <div className="textSection">
                 <CodeSnippet code={
                     `class ValidationError extends Error {
@@ -291,7 +291,7 @@ boundFunc.apply(context, args);`
             <hr className="ruleTypeShi" />
             <h1 className="topic1">Best Practices</h1>
 
-            <h1 className="topic2">Performance</h1>
+            <h1 className="topic2"><CheckCheck/>Performance</h1>
             <div className="textSection">
                 <CodeSnippet code={
                     `// Debouncing (Delayed execution)
@@ -305,7 +305,7 @@ function debounce(func, delay) {
                 } />
             </div>
 
-            <h1 className="topic2">Memory Management</h1>
+            <h1 className="topic2"><CheckCheck/>Memory Management</h1>
             <div className="textSection">
                 <CodeSnippet code={
                     `// Avoid global variables
@@ -318,7 +318,7 @@ element.removeEventListener('click', handler);`
                 } />
             </div>
 
-            <h1 className="topic2">Code Quality</h1>
+            <h1 className="topic2"><CheckCheck/>Code Quality</h1>
             <div className="textSection">
                 <CodeSnippet code={
                     `// Use modules

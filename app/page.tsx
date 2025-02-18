@@ -41,12 +41,13 @@ export default function Home() {
     image: html,
     alt: "html",
     link: "html"
-  }, {
-    name: "NEXTjs",
-    image: nextjs,
-    alt: "next",
-    link: "nextjs"
-  }
+  },
+  // {
+  //   name: "NEXTjs",
+  //   image: nextjs,
+  //   alt: "next",
+  //   link: "nextjs"
+  // }
   ]
 
   const DisplayCard = ({ cardInfo }: { cardInfo: cardDetailType }) => {
