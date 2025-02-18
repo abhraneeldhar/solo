@@ -14,56 +14,61 @@ import ninja from "../public/ninja.png"
 interface cardDetailType {
   name: string,
   image: StaticImageData,
-  alt: string
+  alt: string,
+  link: string
 }
 
 export default function Home() {
   const cards: cardDetailType[] = [{
     name: "Python",
     image: python,
-    alt: "py"
+    alt: "py",
+    link: "python"
   }, {
     name: "Javascript",
     image: javascript,
-    alt: "js"
+    alt: "js",
+    link: "javascript"
   },
   {
     name: "CSS",
     image: css,
-    alt: "css"
+    alt: "css",
+    link: "css"
   },
   {
     name: "HTML",
     image: html,
-    alt: "html"
+    alt: "html",
+    link: "html"
   }, {
     name: "NEXTjs",
     image: nextjs,
-    alt: "next"
+    alt: "next",
+    link: "nextjs"
   }
   ]
 
   const DisplayCard = ({ cardInfo }: { cardInfo: cardDetailType }) => {
     return (<>
-      <div className={`${styles.languageCard} ${styles[cardInfo.name]}`}>
-        <div className={styles.terminalIconDiv} >
-          <Terminal className={styles.terminalIcon} />
+      <a href={cardInfo.link}>
+
+        <div className={`${styles.languageCard} ${styles[cardInfo.name]}`}>
+          <div className={styles.terminalIconDiv} >
+            <Terminal className={styles.terminalIcon} />
+          </div>
+          <div className={styles.logo}>
+            <Image unoptimized src={cardInfo.image} alt={cardInfo.alt} />
+          </div>
+          <h1>{cardInfo.name}</h1>
         </div>
-        <div className={styles.logo}>
-          <Image unoptimized src={cardInfo.image} alt={cardInfo.alt} />
-        </div>
-        <h1>{cardInfo.name}</h1>
-      </div>
+      </a>
     </>)
   }
 
 
-  // const [displayCards,setDisplayCards]=useState<cardDetailType[]>(cards)
 
-  const displayCards=cards;
-
-  
-
+  const displayCards = cards;
 
 
 
@@ -78,7 +83,7 @@ export default function Home() {
       <div className={styles.languageCardHolder}>
         {displayCards.map((cardInfo) => (<DisplayCard key={cardInfo.name} cardInfo={cardInfo} />))}
       </div>
-      
+
     </div>
   </>)
 }

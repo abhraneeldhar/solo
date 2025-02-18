@@ -84,8 +84,7 @@
   filter: drop-shadow(0px 0px 5px #30c5a9);
 }
 .ruleTypeShi{
-  /* height: 40px; */
-  border: 2px solid rgba(255, 255, 255, 0.299);
+  border: 2px solid rgba(2, 69, 36, 0.579);
   margin: 10px 0px;
   border-radius: 10px;
 }
@@ -164,6 +163,10 @@
 @media(max-width:500px) {
   .referenceMain{
     padding: 0px 10px;
+  }
+  .ruleTypeShi{
+    width: 110vw;
+    transform: translateX(-5vw);
   }
   .textSection{
     padding: 0;

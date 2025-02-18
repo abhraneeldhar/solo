@@ -29,7 +29,7 @@ def hello():
 
             </div>
 
-            <h1 className="topic2">TypeError: 'NoneType' object is not subscriptable</h1>
+            <h1 className="topic2"><CheckCheck /> TypeError: 'NoneType' object is not subscriptable</h1>
 
             <div className="textSection">
                 <strong>Cause : </strong> Trying to index a function that returns None<br />
@@ -47,6 +47,14 @@ if data:
     print(data[0])`
                 } />
             </div>
+
+            <h1 className="topic1">Common Operations</h1>
+
+
+
+
+
+
 
 
 
