@@ -1,5 +1,5 @@
 import CodeSnippet from "@/components/ui/codeSnippet";
-import { CheckCheck, CodepenIcon } from "lucide-react";
+import { CheckCheck } from "lucide-react";
 
 
 export default function Javascript() {
