@@ -110,6 +110,11 @@
   align-items: center;
   padding: 4px 15px;
 }
+.topic2 svg{
+  height: 20px;
+  width: 30px;
+  object-fit: contain;
+}
 
 .textSection{
   padding-left: 20px;
@@ -127,6 +132,9 @@
   position: relative;
   min-width: 400px;
   transition: all 0.2s;
+  white-space: pre-wrap;  
+  word-wrap: break-word; 
+  overflow-wrap: break-word;
 }
 .codeSnippetMain:hover{
   transform: scale(1.01);
@@ -139,7 +147,7 @@
   position: absolute;
   top: 5px;
   right: 5px;
-  background-color: #001810;
+  background-color: rgba(0, 24, 16, 0.725);
   padding: 5px 7px;
   border-radius: 5px;
 }
@@ -173,11 +181,12 @@
   }
   .codeSnippetMain{
     width: 100%;
-    word-wrap:break-word;
     min-width: unset;
   }
   .snippetText{
-    word-wrap:break-word;
     background-color: red;
+  }
+  .copyCodeBtn span{
+    display: none;
   }
 }
