@@ -104,7 +104,7 @@
   border-radius: 0px 0px 0px 10px;
   filter: drop-shadow(0px 0px 2px white);
   width: fit-content;
-  margin-bottom: 20px;
+  margin: 20px 0px;
   display: flex;
   gap: 10px;
   align-items: center;
@@ -115,6 +115,15 @@
   width: 30px;
   object-fit: contain;
 }
+.topic3{
+  background-color: #00e495;
+  color: black;
+  font-weight: 400;
+  width: fit-content;
+  padding: 5px 20px;
+  border-radius: 10px;
+  margin: 20px;
+}
 
 .textSection{
   padding-left: 20px;
@@ -123,7 +132,8 @@
 
 .codeSnippetMain{
   background-color: #07362d;
-  border: 2px solid #029764;
+  /* border: 2px solid #029764; */
+  border: 2px solid #07bc7d;
   filter: drop-shadow(0px 0px 30px #162b24);
   padding: 20px;
   border-radius: 10px;
