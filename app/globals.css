@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap');
+
+
+
 *{
   padding: 0;
   margin: 0;
@@ -62,11 +67,114 @@
   }
 }
 
-@layer base {
-  * {
-    @apply border-border;
+
+
+.referenceMain{
+  background-color: rgba(0,16,18,255);
+  min-height: 100vh;
+  color: rgba(227,234,236,255);
+  padding: 0px 30px;
+  overflow-x: hidden;
+}
+
+.header{
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-size: 3.5em;
+  filter: drop-shadow(0px 0px 5px #30c5a9);
+}
+.ruleTypeShi{
+  /* height: 40px; */
+  border: 2px solid rgba(255, 255, 255, 0.299);
+  margin: 10px 0px;
+  border-radius: 10px;
+}
+
+.topic1{
+  font-family: "Inter",sans-serif;
+  font-size: 2.5em;
+  font-weight: 500;
+  color: #08f8a9;
+  filter: drop-shadow(0px 0px 30px #08f8a9);
+}
+
+.topic2{
+  font-family: "Inter",sans-serif;
+  font-size: 1.5em;
+  border-bottom: 2px solid #08f8a9;
+  border-radius: 0px 0px 0px 10px;
+  filter: drop-shadow(0px 0px 2px white);
+  width: fit-content;
+  margin-bottom: 20px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  padding: 4px 15px;
+}
+
+.textSection{
+  padding-left: 20px;
+  font-family: "Source Code Pro",sans-serif;
+}
+
+.codeSnippetMain{
+  background-color: #07362d;
+  border: 2px solid #029764;
+  filter: drop-shadow(0px 0px 30px #162b24);
+  padding: 20px;
+  border-radius: 10px;
+  width: fit-content;
+  margin: 25px 0px;
+  position: relative;
+  min-width: 400px;
+  transition: all 0.2s;
+}
+.codeSnippetMain:hover{
+  transform: scale(1.01);
+}
+
+.copyCodeBtn{
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background-color: #001810;
+  padding: 5px 7px;
+  border-radius: 5px;
+}
+.copyCodeBtn:hover{
+  background-color: #07362d;
+
+}
+.copyIcon{
+  height: 20px;
+  width: 20px;
+}
+
+
+
+
+
+
+
+
+
+@media(max-width:500px) {
+  .referenceMain{
+    padding: 0px 10px;
   }
-  body {
-    @apply bg-background text-foreground;
+  .textSection{
+    padding: 0;
+  }
+  .codeSnippetMain{
+    width: 100%;
+    word-wrap:break-word;
+    min-width: unset;
+  }
+  .snippetText{
+    word-wrap:break-word;
+    background-color: red;
   }
 }

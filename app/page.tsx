@@ -28,20 +28,20 @@ export default function Home() {
     alt: "js"
   },
   {
-    name:"CSS",
-    image:css,
-    alt:"css"
+    name: "CSS",
+    image: css,
+    alt: "css"
   },
   {
-    name:"HTML",
-    image:html,
-    alt:"html"
+    name: "HTML",
+    image: html,
+    alt: "html"
   }, {
-    name:"NEXTjs",
-    image:nextjs,
-    alt:"next"
-  } 
-]
+    name: "NEXTjs",
+    image: nextjs,
+    alt: "next"
+  }
+  ]
 
   const DisplayCard = ({ cardInfo }: { cardInfo: cardDetailType }) => {
     return (<>
@@ -56,18 +56,29 @@ export default function Home() {
       </div>
     </>)
   }
+
+
+  // const [displayCards,setDisplayCards]=useState<cardDetailType[]>(cards)
+
+  const displayCards=cards;
+
+  
+
+
+
+
+
   return (<>
     <div className={styles.homemain}>
-      <div className={styles.visits}><Image className={styles.ninja} src={ninja} alt=""/><h1>4000 visits</h1></div>
+      <div className={styles.visits}><Image className={styles.ninja} src={ninja} alt="" /><h1>4000 visits</h1></div>
       <h1 className={styles.bigHeader}>solo <span>Dev</span></h1>
       <p className={styles.headerPara}>Quick cheat sheets for popular programming languages and frameworks<br /> For and by one man teams</p>
       <input className={styles.searchInput} placeholder="Search for popular languages and frameworks..." />
 
       <div className={styles.languageCardHolder}>
-
-        {cards.map((cardInfo) => (<DisplayCard key={cardInfo.name} cardInfo={cardInfo} />))}
-
+        {displayCards.map((cardInfo) => (<DisplayCard key={cardInfo.name} cardInfo={cardInfo} />))}
       </div>
+      
     </div>
   </>)
 }
