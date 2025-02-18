@@ -7,7 +7,7 @@
 
 
 
-*{
+* {
   padding: 0;
   margin: 0;
 }
@@ -39,6 +39,7 @@
     --chart-4: 280 65% 60%;
     --chart-5: 340 75% 55%;
   }
+
   .dark {
     --background: 0 0% 3.9%;
     --foreground: 0 0% 98%;
@@ -69,36 +70,37 @@
 
 
 
-.referenceMain{
-  background-color: rgba(0,16,18,255);
+.referenceMain {
+  background-color: rgba(0, 16, 18, 255);
   min-height: 100vh;
-  color: rgba(227,234,236,255);
+  color: rgba(227, 234, 236, 255);
   padding: 0px 30px;
   overflow-x: hidden;
 }
 
-.header{
+.header {
   font-family: "Poppins", sans-serif;
   font-weight: 500;
   font-size: 3.5em;
   filter: drop-shadow(0px 0px 5px #30c5a9);
 }
-.ruleTypeShi{
+
+.ruleTypeShi {
   border: 2px solid rgba(2, 69, 36, 0.579);
   margin: 10px 0px;
   border-radius: 10px;
 }
 
-.topic1{
-  font-family: "Inter",sans-serif;
+.topic1 {
+  font-family: "Inter", sans-serif;
   font-size: 2.5em;
   font-weight: 500;
   color: #08f8a9;
   filter: drop-shadow(0px 0px 30px #08f8a9);
 }
 
-.topic2{
-  font-family: "Inter",sans-serif;
+.topic2 {
+  font-family: "Inter", sans-serif;
   font-size: 1.5em;
   border-bottom: 2px solid #08f8a9;
   border-radius: 0px 0px 0px 10px;
@@ -110,12 +112,14 @@
   align-items: center;
   padding: 4px 15px;
 }
-.topic2 svg{
+
+.topic2 svg {
   height: 20px;
   width: 30px;
   object-fit: contain;
 }
-.topic3{
+
+.topic3 {
   background-color: #00e495;
   color: black;
   font-weight: 400;
@@ -125,12 +129,12 @@
   margin: 20px;
 }
 
-.textSection{
+.textSection {
   padding-left: 20px;
-  font-family: "Source Code Pro",sans-serif;
+  font-family: "Source Code Pro", sans-serif;
 }
 
-.codeSnippetMain{
+.codeSnippetMain {
   background-color: #07362d;
   /* border: 2px solid #029764; */
   border: 2px solid #07bc7d;
@@ -142,15 +146,16 @@
   position: relative;
   min-width: 400px;
   transition: all 0.2s;
-  white-space: pre-wrap;  
-  word-wrap: break-word; 
+  white-space: pre-wrap;
+  word-wrap: break-word;
   overflow-wrap: break-word;
 }
-.codeSnippetMain:hover{
+
+.codeSnippetMain:hover {
   transform: scale(1.01);
 }
 
-.copyCodeBtn{
+.copyCodeBtn {
   display: flex;
   gap: 5px;
   align-items: center;
@@ -161,11 +166,13 @@
   padding: 5px 7px;
   border-radius: 5px;
 }
-.copyCodeBtn:hover{
+
+.copyCodeBtn:hover {
   background-color: #07362d;
 
 }
-.copyIcon{
+
+.copyIcon {
   height: 20px;
   width: 20px;
 }
@@ -179,24 +186,29 @@
 
 
 @media(max-width:500px) {
-  .referenceMain{
+  .referenceMain {
     padding: 0px 10px;
   }
-  .ruleTypeShi{
+
+  .ruleTypeShi {
     width: 110vw;
     transform: translateX(-5vw);
   }
-  .textSection{
+
+  .textSection {
     padding: 0;
   }
-  .codeSnippetMain{
+
+  .codeSnippetMain {
     width: 100%;
     min-width: unset;
   }
-  .snippetText{
+
+  .snippetText {
     background-color: red;
   }
-  .copyCodeBtn span{
+
+  .copyCodeBtn span {
     display: none;
   }
 }
