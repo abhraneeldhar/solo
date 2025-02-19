@@ -30,14 +30,14 @@ import { ScrollBar } from "./scroll-area"
 
 export function AppSidebar() {
 
-  const topic2 = document.getElementsByClassName("topic2");
+  // const topic2 = document.getElementsByClassName("topic2");
   const [sidebarMenu, setSidebarMenu] = useState<string[]>([])
-  useEffect(() => {
-    for (let i = 0; i < topic2.length; i++) {
-      setSidebarMenu((e) => [...e, topic2[i].textContent || ""])
-    }
-  }, [])
-  const pathname = usePathname();
+  // useEffect(() => {
+  //   for (let i = 0; i < topic2.length; i++) {
+  //     setSidebarMenu((e) => [...e, topic2[i].textContent || ""])
+  //   }
+  // }, [])
+
   return (
     <Sidebar className={styles.sidebarMain}>
       <SidebarHeader>
