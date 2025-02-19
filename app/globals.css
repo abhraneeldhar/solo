@@ -38,6 +38,14 @@
     --chart-3: 30 80% 55%;
     --chart-4: 280 65% 60%;
     --chart-5: 340 75% 55%;
+    --sidebar-background: #001012;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
   .dark {
@@ -65,11 +73,34 @@
     --chart-3: 30 80% 55%;
     --chart-4: 280 65% 60%;
     --chart-5: 340 75% 55%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
   }
 }
 
 
-
+.tabBarMain{
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  vertical-align: middle;
+  padding: 5px 10px;
+  background-color: #001012;
+}
+.tabBarMain svg{
+  height: 30px;
+  width: 30px;
+}
+.tabBarMain h1{
+  font-size: 20px;
+  font-weight: 400;
+}
 .referenceMain {
   background-color: rgba(0, 16, 18, 255);
   min-height: 100vh;
@@ -210,5 +241,22 @@
 
   .copyCodeBtn span {
     display: none;
+  }
+}
+
+
+
+
+
+
+
+
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
   }
 }

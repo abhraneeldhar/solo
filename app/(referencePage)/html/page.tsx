@@ -14,10 +14,10 @@ export default function HTML() {
                 <strong>Issue:</strong> Browser rendering inconsistencies<br />
                 <strong>Fix:</strong> Always close tags and maintain hierarchy
                 <CodeSnippet code={
-                    `<!-- ❌ Wrong -->
+                    `<!-- ❌🚫 Wrong: Tag mismatch chaos -->
 <div><p>Text</div></p>
 
-<!-- ✅ Correct -->
+<!-- ✅✨ Correct: Proper hierarchy -->
 <div><p>Text</p></div>`
                 } />
             </div>
@@ -25,12 +25,12 @@ export default function HTML() {
             <h1 className="topic2"><CheckCheck />Missing DOCTYPE</h1>
             <div className="textSection">
                 <CodeSnippet code={
-                    `<!-- ❌ Triggers quirks mode -->
+                    `<!-- ❌👻 Triggers quirks mode -->
 <html>
 ...
 </html>
 
-<!-- ✅ First line in every HTML doc -->
+<!-- ✅📜 HTML5 document declaration -->
 <!DOCTYPE html>`
                 } />
             </div>
@@ -41,7 +41,8 @@ export default function HTML() {
             <h1 className="topic2"><CheckCheck />Basic Structure</h1>
             <div className="textSection">
                 <CodeSnippet code={
-                    `<!DOCTYPE html>
+                    `<!-- 🏠 HTML skeleton structure -->
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -49,7 +50,7 @@ export default function HTML() {
     <title>Document</title>
 </head>
 <body>
-    <!-- Content -->
+    <!-- 📝 Main content goes here -->
 </body>
 </html>`
                 } />
@@ -58,7 +59,8 @@ export default function HTML() {
             <h1 className="topic2"><CheckCheck />Semantic Elements</h1>
             <div className="textSection">
                 <CodeSnippet code={
-                    `<header>Site header</header>
+                    `<!-- 🏛️ Meaningful structure -->
+<header>Site header</header>
 <nav>Main navigation</nav>
 <main>
     <article>Independent content</article>
@@ -69,7 +71,6 @@ export default function HTML() {
                 } />
             </div>
 
-
             <hr className="ruleTypeShi" />
             <h1 className="topic1">Element Tags</h1>
 
@@ -77,14 +78,16 @@ export default function HTML() {
             <div className="textSection">
                 <h1 className="topic3">Paragraphs & Headings</h1>
                 <CodeSnippet code={
-                    `<p>Paragraph text</p>
+                    `<!-- 📄 Text elements -->
+<p>Paragraph text</p>
 <h1>Main Heading</h1>  <!-- h1-h6 -->
 <span>Inline text container</span>`
                 } />
 
                 <h1 className="topic3">Links & Media</h1>
                 <CodeSnippet code={
-                    `<a href="https://example.com">Anchor link</a>
+                    `<!-- 🔗 Links & media elements -->
+<a href="https://example.com">Anchor link</a>
 <img src="image.jpg" alt="Description">
 <video controls><source src="video.mp4"></video>`
                 } />
@@ -93,7 +96,8 @@ export default function HTML() {
             <h1 className="topic2"><CheckCheck/>Containers</h1>
             <div className="textSection">
                 <CodeSnippet code={
-                    `<div>Block container</div>
+                    `<!-- 📦 Container elements -->
+<div>Block container</div>
 <section>Document section</section>
 <article>Independent content</article>
 <nav>Navigation links</nav>`
@@ -103,7 +107,8 @@ export default function HTML() {
             <h1 className="topic2"><CheckCheck/>Lists</h1>
             <div className="textSection">
                 <CodeSnippet code={
-                    `<ul>          <!-- Unordered list -->
+                    `<!-- 📋 List structures -->
+<ul>          <!-- Unordered list -->
     <li>Item</li>  <!-- List item -->
 </ul>
 
@@ -117,9 +122,12 @@ export default function HTML() {
             <h1 className="topic2"><CheckCheck/>Forms</h1>
             <div className="textSection">
                 <CodeSnippet code={
-                    `<input type="text" placeholder="Enter text">
+                    `<!-- 📝 User input elements -->
+<input type="text" placeholder="Enter text">
 <input type="checkbox" id="check">
 <textarea rows="4"></textarea>
+
+<!-- 🔘 Selection elements -->
 <select>
     <option value="1">Option 1</option>
     <option value="2">Option 2</option>
@@ -132,7 +140,8 @@ export default function HTML() {
             <h1 className="topic2"><CheckCheck/>Tables</h1>
             <div className="textSection">
                 <CodeSnippet code={
-                    `<table>
+                    `<!-- 🗂️ Table structure -->
+<table>
     <thead>     <!-- Table header -->
         <tr>    <!-- Table row -->
             <th>Header</th>  <!-- Header cell -->
@@ -150,7 +159,8 @@ export default function HTML() {
             <h1 className="topic2"><CheckCheck/>Semantic Elements</h1>
             <div className="textSection">
                 <CodeSnippet code={
-                    `<header>Site header</header>
+                    `<!-- 🏷️ Semantic markup -->
+<header>Site header</header>
 <main>Primary content</main>
 <aside>Side content</aside>
 <footer>Site footer</footer>
@@ -158,17 +168,14 @@ export default function HTML() {
                 } />
             </div>
 
-
-
-
-
             <hr className="ruleTypeShi" />
             <h1 className="topic1">Common Operations</h1>
 
             <h1 className="topic2"><CheckCheck />Forms</h1>
             <div className="textSection">
                 <CodeSnippet code={
-                    `<form action="/submit" method="POST">
+                    `<!-- 📨 Form submission example -->
+<form action="/submit" method="POST">
     <label for="email">Email:</label>
     <input type="email" id="email" name="email" required>
     
@@ -183,7 +190,8 @@ export default function HTML() {
             <h1 className="topic2"><CheckCheck />Tables</h1>
             <div className="textSection">
                 <CodeSnippet code={
-                    `<table>
+                    `<!-- 📊 Data table example -->
+<table>
     <thead>
         <tr>
             <th scope="col">Name</th>
@@ -206,7 +214,8 @@ export default function HTML() {
             <h1 className="topic2"><CheckCheck />ARIA Landmarks</h1>
             <div className="textSection">
                 <CodeSnippet code={
-                    `<div role="navigation" aria-label="Main menu">
+                    `<!-- ♿ Accessibility markup -->
+<div role="navigation" aria-label="Main menu">
     <!-- Nav links -->
 </div>
 
@@ -219,10 +228,10 @@ export default function HTML() {
             <h1 className="topic2"><CheckCheck />Alt Texts</h1>
             <div className="textSection">
                 <CodeSnippet code={
-                    `<!-- ❌ Empty alt -->
+                    `<!-- ❌🖼️ Empty alt text -->
 <img src="logo.jpg" alt="">
 
-<!-- ✅ Descriptive -->
+<!-- ✅📝 Descriptive alt text -->
 <img src="logo.jpg" alt="Company logo - red square with ABC text">`
                 } />
             </div>
@@ -233,17 +242,16 @@ export default function HTML() {
             <h1 className="topic2"><CheckCheck />Responsive Meta Tag</h1>
             <div className="textSection">
                 <CodeSnippet code={
-                    `<meta name="viewport" content="width=device-width, initial-scale=1.0">`
+                    `<!-- 📱 Mobile viewport setup -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">`
                 } />
             </div>
 
             <h1 className="topic2"><CheckCheck />Performance Optimization</h1>
             <div className="textSection">
                 <CodeSnippet code={
-                    `<!-- Lazy load images -->
+                    `<!-- 🚀 Performance techniques -->
 <img src="image.jpg" loading="lazy" alt="...">
-
-<!-- Preload critical assets -->
 <link rel="preload" href="font.woff2" as="font">`
                 } />
             </div>
@@ -254,7 +262,7 @@ export default function HTML() {
             <h1 className="topic2"><CheckCheck />Web Storage</h1>
             <div className="textSection">
                 <CodeSnippet code={
-                    `<!-- Requires JavaScript -->
+                    `<!-- 💾 Client-side storage -->
 <script>
 localStorage.setItem('theme', 'dark');
 const theme = localStorage.getItem('theme');
@@ -265,9 +273,12 @@ const theme = localStorage.getItem('theme');
             <h1 className="topic2"><CheckCheck />Canvas</h1>
             <div className="textSection">
                 <CodeSnippet code={
-                    `<canvas id="myCanvas" width="200" height="100">
-    Fallback text
+                    `<!-- 🎨 Dynamic graphics container -->
+<canvas id="myCanvas" width="200" height="100">
+    <!-- 📝 Fallback content -->
 </canvas>
+
+<!-- 🛠️ JavaScript drawing -->
 <script>
     const ctx = document.getElementById('myCanvas').getContext('2d');
     ctx.fillStyle = 'red';
@@ -282,7 +293,8 @@ const theme = localStorage.getItem('theme');
             <h1 className="topic2"><CheckCheck />Meta Tags</h1>
             <div className="textSection">
                 <CodeSnippet code={
-                    `<meta name="description" content="Page description for SERPs">
+                    `<!-- 🔍 Search engine optimization -->
+<meta name="description" content="Page description for SERPs">
 <meta name="keywords" content="HTML,CSS,JavaScript">
 <meta property="og:title" content="Social Media Title">`
                 } />
@@ -291,7 +303,8 @@ const theme = localStorage.getItem('theme');
             <h1 className="topic2"><CheckCheck />Structured Data</h1>
             <div className="textSection">
                 <CodeSnippet code={
-                    `<script type="application/ld+json">
+                    `<!-- 🧱 Structured markup -->
+<script type="application/ld+json">
 {
     "@context": "https://schema.org",
     "@type": "Organization",

@@ -4,7 +4,7 @@ import { CheckCheck } from "lucide-react";
 export default function CSS() {
     return (<>
         <div className="referenceMain">
-            <h1 className="header">Javascript</h1>
+            <h1 className="header">CSS</h1>
             <hr className="ruleTypeShi" />
 
             <h1 className="topic1">Common Errors</h1>
@@ -14,10 +14,10 @@ export default function CSS() {
                 <strong>Issue:</strong> Styles not applying due to specificity conflicts<br />
                 <strong>Fix:</strong> Use !important sparingly, leverage cascade hierarchy
                 <CodeSnippet code={
-                    `/* ❌ Inline style overrides */
+                    `/* ❌🚫 Inline style override chaos */
 <div style="color: red" class="blue-text">
 
-/* ✅ Proper specificity management */
+/* ✅✨ Proper specificity management */
 .blue-text { color: blue !important; }`
                 } />
             </div>
@@ -25,10 +25,10 @@ export default function CSS() {
             <h1 className="topic2"><CheckCheck />Box Model Surprises</h1>
             <div className="textSection">
                 <CodeSnippet code={
-                    `/* ❌ Unaccounted borders/padding */
+                    `/* ❌📦 Unaccounted borders/padding */
 div { width: 100%; padding: 20px; } 
 
-/* ✅ Border-box sizing */
+/* ✅📐 Border-box sizing solution */
 * { box-sizing: border-box; }`
                 } />
             </div>
@@ -39,12 +39,13 @@ div { width: 100%; padding: 20px; }
             <h1 className="topic2"><CheckCheck />Selectors</h1>
             <div className="textSection">
                 <CodeSnippet code={
-                    `.class-selector { ... }
+                    `/* 🔍 Element targeting */
+.class-selector { ... }
 #id-selector { ... }
 element { ... }
 [data-attr] { ... }
 
-/* Combinators */
+/* ➕ Combinator logic */
 .parent > .child { ... }
 .sibling + .adjacent { ... }
 .group1, .group2 { ... }`
@@ -54,7 +55,8 @@ element { ... }
             <h1 className="topic2"><CheckCheck />Box Model</h1>
             <div className="textSection">
                 <CodeSnippet code={
-                    `margin: 10px 5px 15px 0;
+                    `/* 📦 Spacing properties */
+margin: 10px 5px 15px 0;
 padding: 1em 2em;
 border: 2px solid #333;
 outline: 1px dashed red;`
@@ -64,7 +66,8 @@ outline: 1px dashed red;`
             <h1 className="topic2"><CheckCheck />Units</h1>
             <div className="textSection">
                 <CodeSnippet code={
-                    `width: 100px;      /* Absolute */
+                    `/* 📏 Measurement units */
+width: 100px;      /* Absolute */
 font-size: 1.2rem;   /* Root-relative */
 height: 50vh;        /* Viewport-based */
 padding: 2em;        /* Element-relative */`
@@ -77,7 +80,8 @@ padding: 2em;        /* Element-relative */`
             <h1 className="topic2"><CheckCheck />Flexbox</h1>
             <div className="textSection">
                 <CodeSnippet code={
-                    `.container {
+                    `/* 🎯 Flexible layouts */
+.container {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -85,7 +89,7 @@ padding: 2em;        /* Element-relative */`
 }
 
 .item {
-    flex: 1 0 200px;
+    flex: 1 0 200px;  /* Grow | Shrink | Basis */
 }`
                 } />
             </div>
@@ -93,7 +97,8 @@ padding: 2em;        /* Element-relative */`
             <h1 className="topic2"><CheckCheck />CSS Grid</h1>
             <div className="textSection">
                 <CodeSnippet code={
-                    `.grid-container {
+                    `/* 🌐 Grid systems */
+.grid-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-auto-rows: minmax(100px, auto);
@@ -101,7 +106,7 @@ padding: 2em;        /* Element-relative */`
 }
 
 .grid-item {
-    grid-column: span 2;
+    grid-column: span 2;  /* Column spanning */
 }`
                 } />
             </div>
@@ -109,13 +114,13 @@ padding: 2em;        /* Element-relative */`
             <h1 className="topic2"><CheckCheck />Centering Elements</h1>
             <div className="textSection">
                 <CodeSnippet code={
-                    `/* Modern */
+                    `/* ✨ Modern centering */
 .center {
     display: grid;
     place-items: center;
 }
 
-/* Legacy */
+/* ⏳ Legacy method */
 .old-center {
     position: absolute;
     top: 50%;
@@ -131,7 +136,8 @@ padding: 2em;        /* Element-relative */`
             <h1 className="topic2"><CheckCheck />Media Queries</h1>
             <div className="textSection">
                 <CodeSnippet code={
-                    `@media (min-width: 768px) { ... }
+                    `/* 📱 Responsive breakpoints */
+@media (min-width: 768px) { ... }
 @media (orientation: portrait) { ... }
 @media (hover: hover) { ... }  /* Touch detection */`
                 } />
@@ -140,7 +146,8 @@ padding: 2em;        /* Element-relative */`
             <h1 className="topic2"><CheckCheck />Fluid Layouts</h1>
             <div className="textSection">
                 <CodeSnippet code={
-                    `width: min(100%, 1200px);
+                    `/* 🌊 Fluid sizing */
+width: min(100%, 1200px);
 font-size: clamp(1rem, 2vw, 1.5rem);
 height: calc(100vh - 60px);`
                 } />
@@ -152,7 +159,8 @@ height: calc(100vh - 60px);`
             <h1 className="topic2"><CheckCheck />Keyframe Animations</h1>
             <div className="textSection">
                 <CodeSnippet code={
-                    `@keyframes slide {
+                    `/* 🎥 Animation sequences */
+@keyframes slide {
     0% { transform: translateX(-100%); }
     100% { transform: translateX(0); }
 }
@@ -166,7 +174,8 @@ height: calc(100vh - 60px);`
             <h1 className="topic2"><CheckCheck />Transitions</h1>
             <div className="textSection">
                 <CodeSnippet code={
-                    `.button {
+                    `/* 🔄 Smooth state changes */
+.button {
     transition: all 0.2s ease-in-out;
     transition-property: background-color, transform;
 }
@@ -183,7 +192,8 @@ height: calc(100vh - 60px);`
             <h1 className="topic2"><CheckCheck />Custom Properties</h1>
             <div className="textSection">
                 <CodeSnippet code={
-                    `:root {
+                    `/* 🎨 Reusable values */
+:root {
     --primary-color: #2196F3;
     --spacing-unit: 8px;
 }
@@ -201,7 +211,8 @@ height: calc(100vh - 60px);`
             <h1 className="topic2"><CheckCheck />BEM Naming</h1>
             <div className="textSection">
                 <CodeSnippet code={
-                    `.block { ... }
+                    `/* 🧱 Component-based naming */
+.block { ... }
 .block__element { ... }
 .block--modifier { ... }`
                 } />
@@ -210,10 +221,7 @@ height: calc(100vh - 60px);`
             <h1 className="topic2"><CheckCheck />Performance Tips</h1>
             <div className="textSection">
                 <CodeSnippet code={
-                    `/* Avoid */
-* { box-shadow: ...; }
-
-/* Prefer */
+                    `/* 🚀 Optimization strategies */
 will-change: transform;
 contain: strict;
 content-visibility: auto;`
@@ -223,16 +231,15 @@ content-visibility: auto;`
             <h1 className="topic2"><CheckCheck />Mobile-First Approach</h1>
             <div className="textSection">
                 <CodeSnippet code={
-                    `/* Base styles (mobile) */
+                    `/* 📱 Mobile-first workflow */
 .container { padding: 1rem; }
 
-/* Desktop overrides */
+/* 💻 Desktop enhancements */
 @media (min-width: 1024px) {
     .container { padding: 2rem; }
 }`
                 } />
             </div>
-
         </div>
     </>)
 }
