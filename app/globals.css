@@ -38,7 +38,7 @@
     --chart-3: 30 80% 55%;
     --chart-4: 280 65% 60%;
     --chart-5: 340 75% 55%;
-    --sidebar-background: #001012;
+    --sidebar-background: 187 100% 2%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
     --sidebar-primary-foreground: 0 0% 100%;
@@ -91,7 +91,11 @@
   gap: 20px;
   vertical-align: middle;
   padding: 5px 10px;
-  background-color: #001012;
+  background-color: #00181055;
+  backdrop-filter: blur(5px);
+  width: 100%;
+  position: fixed;
+  z-index: 3;
 }
 .tabBarMain svg{
   height: 30px;
@@ -111,6 +115,7 @@
   color: rgba(227, 234, 236, 255);
   padding: 0px 30px;
   overflow-x: hidden;
+  margin-top: 30px;
 }
 
 .header {

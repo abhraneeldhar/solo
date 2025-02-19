@@ -19,6 +19,7 @@ import solodev from "../../public/ninja.png"
 
 import styles from "./sidebar.module.css"
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@radix-ui/react-collapsible"
+import { Sheet, SheetDescription, SheetHeader, SheetTitle } from "./sheet"
 
 const items = [
   {
@@ -64,30 +65,30 @@ export function AppSidebar() {
         <SidebarGroup>
           <SidebarGroupContent>
             <Collapsible defaultOpen className="group/collapsible">
-                <CollapsibleTrigger asChild>
-                  <SidebarMenuButton><Star color="gold"/>Popular</SidebarMenuButton>
-                </CollapsibleTrigger>
-                <CollapsibleContent>
-                  <SidebarMenu>
-                    <SidebarMenuItem>
-                      <SidebarMenuButton>
-                        Python
-                      </SidebarMenuButton>
-                    </SidebarMenuItem>
-                    <SidebarMenuItem>
-                      <SidebarMenuButton>
-                        Javascript
-                      </SidebarMenuButton>
-                    </SidebarMenuItem>
-                  </SidebarMenu>
-                </CollapsibleContent>
+              <CollapsibleTrigger asChild>
+                <SidebarMenuButton><Star color="gold" />Popular</SidebarMenuButton>
+              </CollapsibleTrigger>
+              <CollapsibleContent>
+                <SidebarMenu>
+                  <SidebarMenuItem>
+                    <SidebarMenuButton>
+                      Python
+                    </SidebarMenuButton>
+                  </SidebarMenuItem>
+                  <SidebarMenuItem>
+                    <SidebarMenuButton>
+                      Javascript
+                    </SidebarMenuButton>
+                  </SidebarMenuItem>
+                </SidebarMenu>
+              </CollapsibleContent>
             </Collapsible>
           </SidebarGroupContent>
         </SidebarGroup>
 
 
         <SidebarGroup>
-          <SidebarMenuButton><Smartphone color="#08f8a9"/>Reference</SidebarMenuButton>
+          <SidebarMenuButton><Smartphone color="#08f8a9" />Reference</SidebarMenuButton>
           <SidebarGroupContent>
             <SidebarMenu>
               {items.map((item) => (
