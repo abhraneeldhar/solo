@@ -68,10 +68,7 @@ export default function Home() {
   }
 
 
-
   const displayCards = cards;
-
-
 
 
   return (<>

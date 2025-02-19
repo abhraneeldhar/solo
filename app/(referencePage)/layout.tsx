@@ -3,14 +3,14 @@ import { AppSidebar } from "@/components/ui/app-sidebar"
 import TabBar from "@/components/ui/tabBar"
 
 export default function Layout({ children }: { children: React.ReactNode }) {
-  return (
+  return (<>
     <SidebarProvider>
       <AppSidebar />
-      <main>
-        {/* <SidebarTrigger /> */}
-        <TabBar/>
+      <main className="referenceLayoutMain">
+      <TabBar />
         {children}
       </main>
     </SidebarProvider>
+  </>
   )
 }
