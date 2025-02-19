@@ -4,7 +4,6 @@
 .sidebarMain:active{
     outline: none;
 }
-
 .sidebarHeader{
     display: flex;
     gap: 20px;
@@ -26,4 +25,9 @@
     height: 50px;
     width: 50px;
     border-radius: 10px;
+}
+
+.menuScrollDiv{
+    height: 300px;
+    overflow: hidden;
 }

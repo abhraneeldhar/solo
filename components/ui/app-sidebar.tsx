@@ -1,3 +1,4 @@
+"use client"
 import { Calendar, Home, Inbox, Search, Settings, Smartphone, Star } from "lucide-react"
 
 import {
@@ -20,36 +21,23 @@ import solodev from "../../public/ninja.png"
 import styles from "./sidebar.module.css"
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@radix-ui/react-collapsible"
 import { Sheet, SheetDescription, SheetHeader, SheetTitle } from "./sheet"
+import { useEffect, useState } from "react"
+import { usePathname } from "next/navigation"
+import { ScrollArea, ScrollAreaScrollbar, ScrollAreaThumb, ScrollAreaViewport, Thumb } from "@radix-ui/react-scroll-area"
+import { ScrollBar } from "./scroll-area"
 
-const items = [
-  {
-    title: "Home",
-    url: "#",
-    icon: Home,
-  },
-  {
-    title: "Inbox",
-    url: "#",
-    icon: Inbox,
-  },
-  {
-    title: "Calendar",
-    url: "#",
-    icon: Calendar,
-  },
-  {
-    title: "Search",
-    url: "#",
-    icon: Search,
-  },
-  {
-    title: "Settings",
-    url: "#",
-    icon: Settings,
-  },
-]
+
 
 export function AppSidebar() {
+
+  const topic2 = document.getElementsByClassName("topic2");
+  const [sidebarMenu, setSidebarMenu] = useState<string[]>([])
+  useEffect(() => {
+    for (let i = 0; i < topic2.length; i++) {
+      setSidebarMenu((e) => [...e, topic2[i].textContent || ""])
+    }
+  }, [])
+  const pathname = usePathname();
   return (
     <Sidebar className={styles.sidebarMain}>
       <SidebarHeader>
@@ -90,18 +78,22 @@ export function AppSidebar() {
         <SidebarGroup>
           <SidebarMenuButton><Smartphone color="#08f8a9" />Reference</SidebarMenuButton>
           <SidebarGroupContent>
-            <SidebarMenu>
-              {items.map((item) => (
-                <SidebarMenuItem key={item.title}>
-                  <SidebarMenuButton asChild>
-                    <a href={item.url}>
-                      <item.icon />
-                      <span>{item.title}</span>
-                    </a>
-                  </SidebarMenuButton>
-                </SidebarMenuItem>
-              ))}
-            </SidebarMenu>
+            <ScrollArea className="h-[200px] rounded-md border p-4">
+
+              <div className={styles.menuScrollDiv}>
+                <SidebarMenu>
+                  {sidebarMenu.map((item, index) => (
+                    <SidebarMenuItem key={index}>
+                      <SidebarMenuButton asChild>
+                        <a href={`#${item.split(' ').join('')}`}>
+                          <span>{item}</span>
+                        </a>
+                      </SidebarMenuButton>
+                    </SidebarMenuItem>
+                  ))}
+                </SidebarMenu>
+              </div>
+            </ScrollArea>
           </SidebarGroupContent>
         </SidebarGroup>
       </SidebarContent>

@@ -7,12 +7,512 @@ export default function PythonPage() {
     return (<>
         <div className="referenceMain">
             <h1 className="header">Python</h1>
+
+
+
+            <hr className="ruleTypeShi" />
+            <h1 className="topic1">Syntax</h1>
+            <h1 className="topic2"><CheckCheck />Variables & Data Types</h1>
+            <div className="textSection">
+                <CodeSnippet code={
+                    `x = 10      # Integer
+y = 3.14    # Float
+name = "Alice"  # String
+is_active = True  # Boolean
+data = None  # NoneType
+`
+                } />
+            </div>
+
+            <h1 className="topic2"><CheckCheck />Conditionals</h1>
+            <div className="textSection">
+                <CodeSnippet code={
+                    `x = 10
+if x > 5:
+    print("Greater than 5")
+elif x == 5:
+    print("Equal to 5")
+else:
+    print("Less than 5")`
+                } />
+            </div>
+
+            <h1 className="topic2"><CheckCheck />Loops</h1>
+            <div className="textSection">
+                <CodeSnippet code={
+                    `# For loop
+for i in range(5):  # 0 to 4
+    print(i)
+
+# While loop
+x = 5
+while x > 0:
+    print(x)
+    x -= 1`
+                } />
+            </div>
+
+            <h1 className="topic2"><CheckCheck />Operators</h1>
+            <div className="textSection">
+                <CodeSnippet code={
+                    `# Arithmetic operators
+# Addition
+print(10 + 3)
+
+# Exponentiation
+print(10 ** 2)
+
+# Floor division
+print(10 // 3)  
+
+# Comparison operators
+x = 5
+print(x == 5)
+print(x != 3)
+
+# Logical operators
+if x > 0 and x < 10:
+    print("Valid range")`
+                } />
+            </div>
+
+            <h1 className="topic2"><CheckCheck />Conditional Flow</h1>
+            <div className="textSection">
+                <CodeSnippet code={
+                    `# If-elif-else
+age = 18
+if age < 13:
+    print("Child")
+elif age < 20:
+    # This will execute
+    print("Teen")  
+else:
+    print("Adult")
+
+# Ternary operator
+status = "Allowed" if age >= 18 else "Denied"`
+                } />
+            </div>
+
+            <h1 className="topic2"><CheckCheck />Comments</h1>
+            <div className="textSection">
+                <CodeSnippet code={
+                    `# Single-line comment
+
+"""
+Multi-line comment
+(using triple-quotes)
+"""
+
+def calculate():
+    '''Docstring comment 
+    explaining function purpose'''`
+                } />
+            </div>
+
+            <h1 className="topic2"><CheckCheck />Input/Output</h1>
+            <div className="textSection">
+                <CodeSnippet code={
+                    `# Basic output
+print("Hello", "World!", sep="-")
+
+# Formatted string (f-string)
+name = "Alice"
+print(f"Hello {name}!")
+
+# User input
+age = input("Enter your age: ")
+print(f"You're {age} years old")`
+                } />
+            </div>
+
+
+
+            <hr className="ruleTypeShi" />
+            <h1 className="topic1">Common Data Structures</h1>
+            <h1 className="topic2"><CheckCheck />Lists</h1>
+            <div className="textSection">
+                <p>Python lists are dynamic arrays (like <strong>ArrayList</strong> in Java or arrays in JavaScript).</p>
+                <h1 className="topic3">List Creation, Indexing, and Slicing</h1>
+                <CodeSnippet code={
+`# Creating a list with values
+nums = [10, 20, 30, 40]
+
+# Creating an empty list
+empty_list = [] 
+
+# Mixed type list (integer, string, float)
+mixed = [1, "hello", 3.14]  
+
+# Nested list (list inside a list)
+nested = [[1, 2], [3, 4]] 
+
+# Accessing elements by index
+print(nums[0])  #first element)
+print(nums[-1]) #(last element)
+
+# Slicing the list (Start index inclusive, end exclusive)
+print(nums[1:3]) #from index 1 to 2
+print(nums[:2])  #first 2 elements
+print(nums[-3:]) #last 3 elements`
+                } />
+                <h1 className="topic3">List Methods</h1>
+                <CodeSnippet code={
+                    `# Append value to the list
+nums.append(50)
+
+# Insert value at a specific index
+nums.insert(2, 99)  #inserts 99 at index 
+
+# Pop removes and returns the last item
+nums.pop()
+
+# Remove first occurrence of value
+nums.remove(99)
+
+# Reverse the list
+nums.reverse()
+
+# Sort the list in ascending order
+nums.sort(
+
+# Sort in descending order
+nums.sort(reverse=True)`
+                } />
+                <h1 className="topic3">List Comprehensions</h1>
+                <CodeSnippet code={
+`# Creating a list of squares
+squares = [x**2 for x in range(5)]
+
+# Creating a list of even numbers
+evens = [x for x in range(10) if x % 2 == 0]`
+                } />
+            </div>
+
+            <h1 className="topic2"><CheckCheck />Tuples</h1>
+            <div className="textSection">
+                <p>Tuples are immutable sequences, useful for fixed collections of items.</p>
+                <h1 className="topic3">Tuple Creation and Unpacking</h1>
+                <CodeSnippet code={
+`# Creating a tuple
+tup = (1, 2, 3)
+
+# Single element tuple (comma is needed)
+single_element_tuple = (10,)
+
+# Unpacking tuple values into variables
+a, b, c = tup  # a=1, b=2, c=3
+
+# Nested tuples
+nested_tup = ((1, 2), (3, 4))`
+
+                } />
+            </div>
+
+            <h1 className="topic2"><CheckCheck />Dictionaries</h1>
+            <div className="textSection">
+                <p>Dictionaries store data as key-value pairs.</p>
+                <h1 className="topic3">Dictionary Creation and Methods</h1>
+                <CodeSnippet code={
+`# Creating a dictionary
+my_dict = {"name": "Alice", "age": 25, "city": "Wonderland"}
+
+# Accessing value by key
+print(my_dict["name"])
+
+# Adding or updating a key-value pair
+my_dict["age"] = 26  # Updates
+my_dict["country"] = "Utopia"  # Adds
+
+# Removing a key-value pair
+del my_dict["city"]  # Removes 'city'
+
+# Dictionary methods
+keys = my_dict.keys() 
+values = my_dict.values() 
+items = my_dict.items()`
+                } />
+            </div>
+
+            <h1 className="topic2"><CheckCheck />Sets</h1>
+            <div className="textSection">
+                <p>Sets are unordered collections of unique elements.</p>
+                <h1 className="topic3">Set Operations</h1>
+                <CodeSnippet code={
+`# Creating a set
+my_set = {1, 2, 3, 4}
+
+# Adding an element to the set
+my_set.add(5)
+
+# Removing an element from the set
+my_set.remove(3) 
+
+# Union of sets
+set1 = {1, 2, 3}
+set2 = {3, 4, 5}
+union = set1.union(set2) 
+
+# Intersection of sets
+intersection = set1.intersection(set2)`
+                } />
+            </div>
+
+            <h1 className="topic2"><CheckCheck />Strings</h1>
+            <div className="textSection">
+                <p>Strings are immutable sequences used for text manipulation.</p>
+                <h1 className="topic3">String Manipulation and Methods</h1>
+                <CodeSnippet code={
+                    `# String manipulation
+greeting = "Hello, world!"
+
+# Slicing a string
+# ➝ Hello (First 5 characters) ✂️
+print(greeting[:5])
+
+# String methods
+# ➝ ['Hello', 'world!'] 🧩
+split_str = greeting.split(", ")
+
+# ➝ 'Hello-world!' ➡️
+joined_str = "-".join(split_str)  
+
+# Removing whitespaces
+str_with_spaces = "   lots of space   "
+print(str_with_spaces.strip())
+# ➝ 'lots of space' ✂️`
+                } />
+            </div>
+
+            <h1 className="topic2"><CheckCheck />Collections Module</h1>
+            <div className="textSection">
+                <p>The collections module provides specialized container datatypes.</p>
+                <h1 className="topic3">defaultdict, Counter, deque, namedtuple</h1>
+                <CodeSnippet code={
+                    `# Using defaultdict
+from collections import defaultdict
+my_defaultdict = defaultdict(int)
+my_defaultdict["key1"] += 1 
+# ➝ defaultdict(<class 'int'>, {'key1': 1}) 📜
+
+# Using Counter (counts occurrences of elements)
+from collections import Counter
+my_counter = Counter([1, 2, 2, 3, 3, 3, 4])
+print(my_counter) 
+# ➝ Counter({3: 3, 2: 2, 1: 1, 4: 1}) 🔢
+
+# Using deque (double-ended queue)
+from collections import deque
+my_deque = deque([1, 2, 3])
+my_deque.append(4)
+# ➝ deque([1, 2, 3, 4]) ➕
+
+my_deque.appendleft(0)
+# ➝ deque([0, 1, 2, 3, 4]) 🔄
+
+# Using namedtuple (creates tuple with named fields)
+from collections import namedtuple
+Person = namedtuple('Person', ['name', 'age'])
+person1 = Person(name="Alice", age=25)
+print(person1.name)  # ➝ Alice 📜`
+                } />
+            </div>
+
+
             <hr className="ruleTypeShi" />
 
+            <h1 className="topic1">Functions</h1>
+            <div className="textSection">
+                <p>Functions allow you to group code into reusable blocks.</p>
+                <h1 className="topic2"><CheckCheck />Function Definition & Usage</h1>
+                <CodeSnippet code={
+`# Function definition with parameters and return value
+def greet(name):
+    # Function that greets the person by name
+    return f"Hello, {name}!"
+
+# Calling the function
+print(greet("Alice"))`
+                } />
+
+                <h1 className="topic2"><CheckCheck />Arguments</h1>
+                <CodeSnippet code={
+`# Positional Arguments
+def add(a, b):
+    return a + b
+print(add(3, 4))
+
+# Keyword Arguments
+def greet(name, message="Hello"):
+    return f"{message}, {name}!"
+print(greet(name="Bob", message="Good morning"))
+print(greet(name="Alice"))
+
+# Default Argument
+def multiply(a, b=2):
+    return a * b
+print(multiply(5))  # ➝ 10 (b defaults to 2)
+print(multiply(5, 3))  # ➝ 15 (b is overridden)
+
+# *args (Variable Positional Arguments)
+def add_numbers(*args):
+    return sum(args)  
+print(add_numbers(1, 2, 3, 4))
+
+# **kwargs (Variable Keyword Arguments)
+def print_info(**kwargs):
+    for key, value in kwargs.items():
+        print(f"{key}: {value}") 
+print_info(name="John", age=25, city="NY")`
+                } />
+
+                <h1 className="topic2"><CheckCheck />Lambda Functions</h1>
+                <CodeSnippet code={
+`# Lambda function definition (an anonymous function)
+square = lambda x: x**2 
+
+# Using the lambda function
+print(square(5))`
+                } />
+
+                <h1 className="topic2"><CheckCheck />Scope</h1>
+                <CodeSnippet code={
+`# Local and Global Scope
+x = 10  # Global variable 🌎
+
+def my_function():
+    x = 5  # Local variable inside function 🏠
+    print(x)  # ➝ 5 (local variable is used here)
+
+my_function()
+print(x)  # ➝ 10 (global variable is accessed here)
+
+# Nonlocal keyword to modify variable from enclosing scope
+def outer_function():
+    x = 10  # Enclosing scope variable 📦
+    
+    def inner_function():
+        nonlocal x  # Refers to x in outer function's scope
+        x = 20  # Modifies x in enclosing scope
+        
+    inner_function()
+    print(x)  # ➝ 20 (modified by inner_function)
+
+outer_function()`} />
+            </div>
+
+
+
+
+            <hr className="ruleTypeShi" />
+            <h1 className="topic1">Object-Oriented Pythoning</h1>
+            <div className="textSection">
+                <h1 className="topic2"><CheckCheck />Defining Classes & Objects</h1>
+                <CodeSnippet code={
+                    `class Car:
+    def __init__(self, brand, model):
+        self.brand = brand  # Instance variable
+        self.model = model
+
+my_car = Car("Tesla", "Model S")  # Creating an object
+print(my_car.brand)  # ➝ Tesla`
+                } />
+                <h1 className="topic2"><CheckCheck />Instance & Class Variables</h1>
+                <CodeSnippet code={
+                    `class Employee:
+    company = "TechCorp"  # Class variable
+
+    def __init__(self, name, salary):
+        self.name = name  # Instance variable
+        self.salary = salary
+
+emp1 = Employee("Alice", 60000)
+emp2 = Employee("Bob", 75000)
+print(emp1.company) 
+print(emp2.salary)`
+                } />
+
+                <h1 className="topic2"><CheckCheck />Methods & Static Methods</h1>
+                <CodeSnippet code={
+`class MathUtils:
+    # Instance method
+    def add(self, a, b):  
+        return a + b
+
+    @staticmethod
+    def multiply(a, b):
+        return a * b
+
+math = MathUtils()
+print(math.add(5, 3))
+print(MathUtils.multiply(4, 2))`
+                } />
+
+                <h1 className="topic2"><CheckCheck />Encapsulation & Private Variables</h1>
+                <CodeSnippet code={
+                    `class BankAccount:
+    def __init__(self, balance):
+        self.__balance = balance  # Private variable
+
+    def get_balance(self):
+        return self.__balance  # Access via method
+
+account = BankAccount(5000)
+print(account.get_balance())
+# print(account.__balance)`
+                } />
+
+                <h1 className="topic2"><CheckCheck />Inheritance</h1>
+                <CodeSnippet code={
+                    `class Animal:
+    def speak(self):
+        return "Animal speaks"
+
+# Inheriting from Animal
+class Dog(Animal):  
+    def speak(self):
+        return "Woof!"
+
+d = Dog()
+print(d.speak())`
+                } />
+
+                <h1 className="topic2"><CheckCheck />Polymorphism</h1>
+                <CodeSnippet code={
+                    `class Bird:
+    def make_sound(self):
+        return "Chirp!"
+
+class Cat:
+    def make_sound(self):
+        return "Meow!"
+
+def play_sound(animal):
+    print(animal.make_sound())
+
+play_sound(Bird())  # ➝ Chirp!
+play_sound(Cat())   # ➝ Meow!`
+                } />
+
+                <h1 className="topic2"><CheckCheck />Dunder Methods (Magic Methods)</h1>
+                <CodeSnippet code={
+                    `class Vector:
+    def __init__(self, x, y):
+        self.x, self.y = x, y
+
+    def __add__(self, other):  # Overloading '+'
+        return Vector(self.x + other.x, self.y + other.y)
+
+v1, v2 = Vector(3, 4), Vector(1, 2)
+v3 = v1 + v2
+print(v3.x, v3.y)  # ➝ 4, 6`
+                } />
+            </div>
+
+
+            <hr className="ruleTypeShi" />
             <h1 className="topic1">Common Errors</h1>
-
             <h1 className="topic2"><CheckCheck />IndentationError</h1>
-
             <div className="textSection">
                 <strong>Cause :</strong> Inconsistent spaces/tabs in indentation<br />
                 <strong>Fix : </strong> Use 4 spaces per indent (PEP 8 standard)
@@ -116,302 +616,10 @@ def func(data=None):
 
 
 
-            <hr className="ruleTypeShi" />
-            <h1 className="topic1">Syntax</h1>
-            <h1 className="topic2"><CheckCheck />Variables & Data Types</h1>
-            <div className="textSection">
-                <CodeSnippet code={
-                    `x = 10      # Integer
-y = 3.14    # Float
-name = "Alice"  # String
-is_active = True  # Boolean
-data = None  # NoneType
-`
-                } />
-            </div>
-
-            <h1 className="topic2"><CheckCheck />Conditionals</h1>
-            <div className="textSection">
-                <CodeSnippet code={
-                    `x = 10
-if x > 5:
-    print("Greater than 5")
-elif x == 5:
-    print("Equal to 5")
-else:
-    print("Less than 5")`
-                } />
-            </div>
-
-            <h1 className="topic2"><CheckCheck />Loops</h1>
-            <div className="textSection">
-                <CodeSnippet code={
-                    `# For loop
-for i in range(5):  # 0 to 4
-    print(i)
-
-# While loop
-x = 5
-while x > 0:
-    print(x)
-    x -= 1`
-                } />
-            </div>
-
-
-
-            <hr className="ruleTypeShi" />
-            <h1 className="topic1">Common Data Structures</h1>
-            <h1 className="topic2"><CheckCheck />Lists</h1>
-            <div className="textSection">
-                Python lists are dynamic arrays (like <strong>ArrayList</strong> in Java or arrays in JavaScript).
-                <h1 className="topic3">List Creation</h1>
-                <CodeSnippet code={
-                    `nums = [10, 20, 30, 40]  # List with values
-empty_list = []  # Empty list
-mixed = [1, "hello", 3.14]  # Can store different types
-nested = [[1, 2], [3, 4]]  # Nested list`
-                } />
-                <h1 className="topic3">List Operations</h1>
-                <CodeSnippet code={
-                    `nums.append(50)  # ➝ [10, 20, 30, 40, 50] (Adds at end)
-nums.insert(2, 99)  # ➝ [10, 20, 99, 30, 40, 50] (Inserts at index)
-nums.pop()  # ➝ Removes last element
-nums.remove(99)  # ➝ Removes first occurrence of value
-nums.reverse()  # ➝ Reverses the list
-nums.sort()  # ➝ Sorts list (ascending)
-nums.sort(reverse=True)  # ➝ Sorts in descending order`
-                } />
-                <h1 className="topic3">Slicing Lists</h1>
-                <CodeSnippet code={
-                    `nums = [10, 20, 30, 40, 50]
-                print(nums[1:4])  # ➝ [20, 30, 40] (Start index inclusive, end exclusive)
-                print(nums[:3])  # ➝ [10, 20, 30] (First 3 elements)
-                print(nums[-2:])  # ➝ [40, 50] (Last 2 elements)`
-                } />
-                <h1 className="topic3">List Comprehensions</h1>
-                <CodeSnippet code={
-                    `squares = [x**2 for x in range(5)]  # ➝ [0, 1, 4, 9, 16]
-                evens = [x for x in range(10) if x % 2 == 0]  # ➝ [0, 2, 4, 6, 8]`
-                } />
-            </div>
-
-
-            <h1 className="topic2">Tuples</h1>
-            Tuples are faster and safer than lists when you don’t need modifications.
-            <h1 className="topic3">Tuple Creation</h1>
-            <div className="textSection">
-
-                <CodeSnippet code={
-                    `coordinates = (3, 4)
-                single_element = (5,)  # Must include a comma!`
-                } />
-                <h1 className="topic3">Tuple Operations</h1>
-                <CodeSnippet code={
-                    `x, y = coordinates  # Tuple unpacking
-                print(len(coordinates))  # ➝ 2
-                print(coordinates[0])  # ➝ 3`
-                } />
-                <h1 className="topic3">Named Tuples (Better Readability)</h1>
-                <CodeSnippet code={
-                    `from collections import namedtuple
-                Point = namedtuple("Point", ["x", "y"])
-                p = Point(3, 4)
-                print(p.x, p.y)  # ➝ 3, 4`
-                } />
-
-
-            </div>
-
-
-            <h1 className="topic2"><CheckCheck />Dictionaries</h1>
-            <div className="textSection">
-                Dictionaries work like JSON objects or HashMaps in Java
-                Use <strong>.keys()</strong>, <strong>.values()</strong>, <strong>.items()</strong> to iterate over a dictionary
-                <h1 className="topic3">Dictionary Creation</h1>
-                <CodeSnippet code={
-                    `person = {"name": "Alice", "age": 25, "city": "NY"}
-empty_dict = {}  # Empty dictionary`
-                } />
-                <h1 className="topic3">Access & Modify Dictionary</h1>
-                <CodeSnippet code={
-                    `print(person["name"])  # ➝ Alice
-person["age"] = 26  # Modify value
-person["job"] = "Engineer"  # Add new key-value`
-                } />
-                <h1 className="topic3">Dictionary Methods</h1>
-                <CodeSnippet code={
-                    `print(person.keys())  # ➝ dict_keys(['name', 'age', 'city', 'job'])
-print(person.values())  # ➝ dict_values(['Alice', 26, 'NY', 'Engineer'])
-print(person.items())  # ➝ dict_items([('name', 'Alice'), ('age', 26), ...])
-
-person.pop("city")  # Removes 'city' key
-person.get("salary", "Not specified")  # ➝ Avoids KeyError, default value`
-                } />
-            </div>
-
-
-            <h1 className="topic2"><CheckCheck />Sets</h1>
-            <div className="textSection">
-                Sets are unordered collections of unique elements in Python.
-                They support mathematical operations like union, intersection, and difference.
-                <h1 className="topic3">Set Creation</h1>
-                <CodeSnippet code={
-                    `numbers = {1, 2, 3, 4, 5}
-empty_set = set()  # Empty set ({} creates an empty dictionary)`
-                } />
-                <h1 className="topic3">Add & Remove Elements</h1>
-                <CodeSnippet code={
-                    `numbers.add(6)  # Adds an element
-numbers.remove(3)  # Removes an element (KeyError if missing)
-numbers.discard(10)  # Removes if exists, no error if missing
-numbers.pop()  # Removes a random element`
-                } />
-                <h1 className="topic3">Set Operations</h1>
-                <CodeSnippet code={
-                    `A = {1, 2, 3}
-B = {3, 4, 5}
-
-print(A | B)  # Union ➝ {1, 2, 3, 4, 5}
-print(A & B)  # Intersection ➝ {3}
-print(A - B)  # Difference ➝ {1, 2}
-print(A ^ B)  # Symmetric Difference ➝ {1, 2, 4, 5}`
-                } />
-            </div>
 
 
 
 
-
-
-
-            <h1 className="topic1">Object-Oriented Pythoning</h1>
-            <div className="textSection">
-                
-
-                <h1 className="topic2">Defining Classes & Objects</h1>
-                <CodeSnippet code={
-                    `class Car:
-    def __init__(self, brand, model):
-        self.brand = brand  # Instance variable
-        self.model = model
-
-my_car = Car("Tesla", "Model S")  # Creating an object
-print(my_car.brand)  # ➝ Tesla`
-                } />
-
-                <h1 className="topic2">Instance & Class Variables</h1>
-                <CodeSnippet code={
-                    `class Employee:
-    company = "TechCorp"  # Class variable (shared across instances)
-
-    def __init__(self, name, salary):
-        self.name = name  # Instance variable
-        self.salary = salary
-
-emp1 = Employee("Alice", 60000)
-emp2 = Employee("Bob", 75000)
-print(emp1.company)  # ➝ TechCorp
-print(emp2.salary)   # ➝ 75000`
-                } />
-
-                <h1 className="topic2">Methods & Static Methods</h1>
-                <CodeSnippet code={
-                    `class MathUtils:
-    def add(self, a, b):  # Instance method
-        return a + b
-
-    @staticmethod
-    def multiply(a, b):  # Static method (no self)
-        return a * b
-
-math = MathUtils()
-print(math.add(5, 3))       # ➝ 8
-print(MathUtils.multiply(4, 2))  # ➝ 8`
-                } />
-
-                <h1 className="topic2">Encapsulation & Private Variables</h1>
-                <CodeSnippet code={
-                    `class BankAccount:
-    def __init__(self, balance):
-        self.__balance = balance  # Private variable (Name mangling)
-
-    def get_balance(self):
-        return self.__balance  # Access via method
-
-account = BankAccount(5000)
-print(account.get_balance())  # ➝ 5000
-# print(account.__balance)  # ❌ AttributeError`
-                } />
-
-                <h1 className="topic2">Inheritance</h1>
-                <CodeSnippet code={
-                    `class Animal:
-    def speak(self):
-        return "Animal speaks"
-
-class Dog(Animal):  # Inheriting from Animal
-    def speak(self):
-        return "Woof!"
-
-d = Dog()
-print(d.speak())  # ➝ Woof!`
-                } />
-
-                <h1 className="topic2">Polymorphism</h1>
-                <CodeSnippet code={
-                    `class Bird:
-    def make_sound(self):
-        return "Chirp!"
-
-class Cat:
-    def make_sound(self):
-        return "Meow!"
-
-def play_sound(animal):
-    print(animal.make_sound())
-
-play_sound(Bird())  # ➝ Chirp!
-play_sound(Cat())   # ➝ Meow!`
-                } />
-
-                <h1 className="topic2">Dunder Methods (Magic Methods)</h1>
-                <CodeSnippet code={
-                    `class Vector:
-    def __init__(self, x, y):
-        self.x, self.y = x, y
-
-    def __add__(self, other):  # Overloading '+'
-        return Vector(self.x + other.x, self.y + other.y)
-
-v1, v2 = Vector(3, 4), Vector(1, 2)
-v3 = v1 + v2
-print(v3.x, v3.y)  # ➝ 4, 6`
-                } />
-            </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            <h1 className="topic2"><CheckCheck />File Handling</h1>
-            <div className="textSection">
-                <strong>with open()</strong> automatically closes the file after use
-                <CodeSnippet code={
-                    `with open("data.txt", "r") as file:
-    content = file.read()
-print(content)
-`} />
-            </div>
 
 
             <h1 className="topic1">Extra Useful Syntax</h1>

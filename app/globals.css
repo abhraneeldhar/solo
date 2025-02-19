@@ -162,11 +162,12 @@
 .topic3 {
   background-color: #00e495;
   color: black;
-  font-weight: 400;
+  font-weight: 500;
   width: fit-content;
   padding: 5px 20px;
   border-radius: 10px;
   margin: 20px;
+  font-family: "Poppins";
 }
 
 .textSection {
@@ -176,7 +177,6 @@
 
 .codeSnippetMain {
   background-color: #07362d;
-  /* border: 2px solid #029764; */
   border: 2px solid #07bc7d;
   filter: drop-shadow(0px 0px 30px #162b24);
   padding: 20px;
@@ -189,6 +189,7 @@
   white-space: pre-wrap;
   word-wrap: break-word;
   overflow-wrap: break-word;
+  font-size: 15px;
 }
 
 .codeSnippetMain:hover {
