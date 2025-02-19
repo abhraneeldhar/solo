@@ -8,7 +8,6 @@ export default function CSS() {
             <hr className="ruleTypeShi" />
 
             <h1 className="topic1">Common Errors</h1>
-
             <h1 className="topic2"><CheckCheck />Specificity Wars</h1>
             <div className="textSection">
                 <strong>Issue:</strong> Styles not applying due to specificity conflicts<br />
