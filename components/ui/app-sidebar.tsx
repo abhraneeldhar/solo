@@ -51,7 +51,7 @@ const items = [
 
 export function AppSidebar() {
   return (
-    <Sidebar>
+    <Sidebar className={styles.sidebarMain}>
       <SidebarHeader>
         <a href="/">
           <div className={styles.sidebarHeader}>
