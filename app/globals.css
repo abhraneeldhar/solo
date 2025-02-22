@@ -96,6 +96,8 @@
   width: 100%;
   position: fixed;
   z-index: 3;
+  height: 30px;
+  /* background-color: red; */
   /* justify-content: space-between; */
 }
 
@@ -106,11 +108,16 @@
 .tabBarMain h1{
   font-size: 20px;
   font-weight: 400;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  /* position: relative; */
 }
 .favStarIcon{
   position: fixed;
-  top: 0.5em;
-  right: 0.5em;
+  top: 20px;
+  right: 20px;
+  transform: translateY(-50%);
   z-index: 3;
 }
 
