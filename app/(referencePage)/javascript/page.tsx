@@ -7,7 +7,7 @@ export default function Javascript() {
             <h1 className="header">Javascript</h1>
             <hr className="ruleTypeShi" />
 
-            <h1 className="topic1">Syntax & Basics</h1>
+            <h1 id="syntax" className="topic1">Syntax & Basics</h1>
 
             <h1 className="topic2"><CheckCheck/>Variables</h1>
             <div className="textSection">
@@ -94,7 +94,7 @@ string example\`);`
             </div>
 
             <hr className="ruleTypeShi" />
-            <h1 className="topic1">Common Operations</h1>
+            <h1 id="commonops" className="topic1">Common Operations</h1>
 
             <h1 className="topic2"><CheckCheck/>DOM Manipulation</h1>
             <div className="textSection">
@@ -137,7 +137,7 @@ document.cookie = 'username=John; expires=Thu, 18 Dec 2025 12:00:00 UTC; path=/'
             </div>
 
             <hr className="ruleTypeShi" />
-            <h1 className="topic1">Data Structures</h1>
+            <h1 id="ds" className="topic1">Data Structures</h1>
 
             <h1 className="topic2"><CheckCheck/>Arrays</h1>
             <div className="textSection">
@@ -178,7 +178,7 @@ weakMap.set(objKey, 'private data');`
             </div>
 
             <hr className="ruleTypeShi" />
-            <h1 className="topic1">Object-Oriented JS</h1>
+            <h1 id="oops" className="topic1">Object-Oriented JS</h1>
 
             <h1 className="topic2"><CheckCheck/>Classes</h1>
             <div className="textSection">
@@ -227,7 +227,7 @@ boundFunc.apply(context, args);`
             </div>
 
             <hr className="ruleTypeShi" />
-            <h1 className="topic1">Asynchronous JS</h1>
+            <h1 id="async" className="topic1">Asynchronous JS</h1>
 
             <h1 className="topic2"><CheckCheck/>Promises</h1>
             <div className="textSection">
@@ -263,7 +263,7 @@ async function fetchData() {
             </div>
 
             <hr className="ruleTypeShi" />
-            <h1 className="topic1">Error Handling</h1>
+            <h1 id="error" className="topic1">Error Handling</h1>
 
             <h1 className="topic2"><CheckCheck/>try/catch</h1>
             <div className="textSection">

@@ -8,7 +8,7 @@ export default function HTML() {
             
 
             <hr className="ruleTypeShi" />
-            <h1 className="topic1">Syntax & Basics</h1>
+            <h1 id="syntax" className="topic1">Syntax & Basics</h1>
 
             <h1 className="topic2"><CheckCheck />Basic Structure</h1>
             <div className="textSection">
@@ -44,7 +44,7 @@ export default function HTML() {
             </div>
 
             <hr className="ruleTypeShi" />
-            <h1 className="topic1">Element Tags</h1>
+            <h1 id="elements" className="topic1">Element Tags</h1>
 
             <h1 className="topic2"><CheckCheck/>Text & Structure</h1>
             <div className="textSection">
@@ -141,7 +141,7 @@ export default function HTML() {
             </div>
 
             <hr className="ruleTypeShi" />
-            <h1 className="topic1">Common Operations</h1>
+            <h1 id="commonops" className="topic1">Common Operations</h1>
 
             <h1 className="topic2"><CheckCheck />Forms</h1>
             <div className="textSection">
@@ -181,7 +181,7 @@ export default function HTML() {
             </div>
 
             <hr className="ruleTypeShi" />
-            <h1 className="topic1">Accessibility Essentials</h1>
+            <h1 id="accessibility" className="topic1">Accessibility Essentials</h1>
 
             <h1 className="topic2"><CheckCheck />ARIA Landmarks</h1>
             <div className="textSection">
@@ -209,7 +209,7 @@ export default function HTML() {
             </div>
 
             <hr className="ruleTypeShi" />
-            <h1 className="topic1">SEO Fundamentals</h1>
+            <h1 id="seo" className="topic1">SEO Fundamentals</h1>
 
             <h1 className="topic2"><CheckCheck />Meta Tags</h1>
             <div className="textSection">
@@ -239,7 +239,7 @@ export default function HTML() {
 
 
             <hr className="ruleTypeShi" />
-            <h1 className="topic1">Common Mistakes</h1>
+            <h1 id="commonmistakes" className="topic1">Common Mistakes</h1>
 
             <h1 className="topic2"><CheckCheck />Unclosed Tags/Mismatched Nesting</h1>
             <div className="textSection">
