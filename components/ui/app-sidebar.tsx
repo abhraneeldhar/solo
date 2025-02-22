@@ -55,6 +55,7 @@ export function AppSidebar() {
         </a>
       </SidebarHeader>
       <SidebarContent>
+        <SidebarMenuButton className="hidden"></SidebarMenuButton>
 
         <SidebarGroup>
           <SidebarGroupContent>
