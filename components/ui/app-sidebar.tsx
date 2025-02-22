@@ -150,18 +150,12 @@ export function AppSidebar() {
                 side="top"
                 className="w-[--radix-popper-anchor-width]"
               >
-                {favPages.map((page,index) => (
-                  <DropdownMenuItem key={index}
-                  // onClick={() => {
-                  //   if (isMobile) {
-                  //     toggleSidebar();
-                  //   }
-                  // }}
-                  >
-                    <a href={`/${page.toLowerCase()}`}>
+                {favPages.map((page, index) => (
+                  <a key={index} href={`/${page.toLowerCase()}`}>
+                    <DropdownMenuItem >
                       {page}
-                    </a>
-                  </DropdownMenuItem>
+                    </DropdownMenuItem>
+                  </a>
                 ))}
 
 
