@@ -88,8 +88,8 @@
 .tabBarMain{
   display: flex;
   align-items: center;
-  gap: 20px;
   vertical-align: middle;
+  gap: 20px;
   padding: 5px 10px;
   background-color: #00181055;
   backdrop-filter: blur(5px);
@@ -97,6 +97,7 @@
   position: fixed;
   z-index: 3;
 }
+
 .tabBarMain svg{
   height: 30px;
   width: 30px;
@@ -105,6 +106,13 @@
   font-size: 20px;
   font-weight: 400;
 }
+.favStarIcon{
+  position: fixed;
+  top: 1vw;
+  right: 1vw;
+  z-index: 3;
+}
+
 .referenceLayoutMain{
   width: 100%;
   /* max-width: 100vw; */

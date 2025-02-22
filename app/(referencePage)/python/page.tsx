@@ -1,5 +1,5 @@
 import CodeSnippet from "@/components/ui/codeSnippet";
-import { CheckCheck } from "lucide-react";
+import { CheckCheck, Star } from "lucide-react";
 
 export default function PythonPage() {
 
