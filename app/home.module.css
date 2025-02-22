@@ -171,6 +171,14 @@
 
 }
 
+.TypeScript{
+    background-color: rgba(49,120,198,0.3);
+}
+.TypeScript img{
+    filter: drop-shadow(0px 0px 30px #3178c6);
+}
+
+
 .NEXTjs {
     background-color: black;
 }

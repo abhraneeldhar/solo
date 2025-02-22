@@ -7,9 +7,9 @@ import python from "../public/languageLogos/python.png"
 import javascript from "../public/languageLogos/javascript.png"
 import css from "../public/languageLogos/css.png"
 import html from "../public/languageLogos/html.png"
+import typescript from "../public/languageLogos/typescript.png"
 import nextjs from "../public/languageLogos/nextjs.png"
 import ninja from "../public/ninja.png"
-
 
 interface cardDetailType {
   name: string,
@@ -42,6 +42,12 @@ export default function Home() {
     alt: "html",
     link: "html"
   },
+  {
+    name:"TypeScript",
+    image:typescript,
+    alt:"ts",
+    link:"typescript"
+  }
   // {
   //   name: "NEXTjs",
   //   image: nextjs,
