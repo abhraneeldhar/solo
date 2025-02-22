@@ -13,6 +13,7 @@ import {
   SidebarMenuItem,
   SidebarMenuSub,
   SidebarMenuSubItem,
+  SidebarSeparator,
 } from "@/components/ui/sidebar"
 
 import Image from "next/image"
@@ -23,26 +24,22 @@ import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@radix-ui/r
 import { Sheet, SheetDescription, SheetHeader, SheetTitle } from "./sheet"
 import { useEffect, useState } from "react"
 import { usePathname } from "next/navigation"
-import { ScrollArea, ScrollAreaScrollbar, ScrollAreaThumb, ScrollAreaViewport, Thumb } from "@radix-ui/react-scroll-area"
-import { ScrollBar } from "./scroll-area"
+import { ScrollArea, ScrollBar } from "./scroll-area"
 import { Separator } from "@radix-ui/react-separator"
 
 
 
 export function AppSidebar() {
 
-  // const topic2 = document.getElementsByClassName("topic2");
   const [sidebarMenu, setSidebarMenu] = useState<string[]>([])
-  // useEffect(() => {
-  //   for (let i = 0; i < topic2.length; i++) {
-  //     setSidebarMenu((e) => [...e, topic2[i].textContent || ""])
-  //   }
-  // }, [])
+  useEffect(() => {
+    const topic2 = document.getElementsByClassName("topic1");
+    for (let i = 0; i < topic2.length; i++) {
+      setSidebarMenu((e) => [...e, topic2[i].textContent || ""])
+    }
+  }, [])
 
-  const tags = Array.from({ length: 50 }).map(
-    (_, i, a) => `v1.2.0-beta.${a.length - i}`
-  )
-  
+
   return (
     <Sidebar className={styles.sidebarMain}>
       <SidebarHeader>
@@ -83,19 +80,18 @@ export function AppSidebar() {
         <SidebarGroup>
           <SidebarMenuButton><Smartphone color="#08f8a9" />Reference</SidebarMenuButton>
           <SidebarGroupContent>
-            <ScrollArea className="h-72 w-48 rounded-md border">
-              <div className="p-4">
-                <h4 className="mb-4 text-sm font-medium leading-none">Tags</h4>
-                {tags.map((tag) => (
-                  <>
-                    <div key={tag} className="text-sm">
-                      {tag}
-                    </div>
-                    <Separator className="my-2" />
-                  </>
-                ))}
-              </div>
+            <ScrollArea className={`h-[60vh] ${styles.referenceScroll}`}>
+              <SidebarMenu>
+
+                {sidebarMenu.map((topic) => (<>
+                  <SidebarMenuItem className={styles.referenceOption}>{topic}</SidebarMenuItem>
+                  <SidebarSeparator/>
+                </>))}
+
+              </SidebarMenu>
             </ScrollArea>
+
+
           </SidebarGroupContent>
         </SidebarGroup>
       </SidebarContent>
