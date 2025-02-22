@@ -1,9 +1,10 @@
 "use client"
-import { Calendar, Home, Inbox, Search, Settings, Smartphone, Star } from "lucide-react"
+import { Calendar, ChevronUp, Home, Inbox, Search, Settings, Smartphone, Star, User2 } from "lucide-react"
 
 import {
   Sidebar,
   SidebarContent,
+  SidebarFooter,
   SidebarGroup,
   SidebarGroupContent,
   SidebarGroupLabel,
@@ -26,8 +27,8 @@ import { Sheet, SheetDescription, SheetHeader, SheetTitle } from "./sheet"
 import { useEffect, useState } from "react"
 import { usePathname } from "next/navigation"
 import { ScrollArea, ScrollBar } from "./scroll-area"
-import { Separator } from "@radix-ui/react-separator"
 import { supabase } from "@/utils/supabase/client"
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "./dropdown-menu"
 
 
 
@@ -43,7 +44,7 @@ export function AppSidebar() {
   }, [])
 
 
-  const [toplang, setTopLang] = useState<{id:number,pageName:string,visits:string}[] | null>(null)
+  const [toplang, setTopLang] = useState<{ id: number, pageName: string, visits: string }[] | null>(null)
   useEffect(() => {
     const getTopLanguages = async () => {
 
@@ -60,8 +61,22 @@ export function AppSidebar() {
     getTopLanguages();
   }, []);
 
-  useEffect(()=>{console.log(toplang)},[toplang])
 
+  const [favPages, setFavPage] = useState<string[]>([]);
+  useEffect(() => {
+    const storedFavPages = localStorage.getItem("favPages");
+    if (storedFavPages) {
+      try {
+        const parsedFavPages = JSON.parse(storedFavPages);
+        setFavPage(parsedFavPages.pages || []);
+      } catch (error) {
+        console.error("Error :", error);
+        setFavPage([]);
+      }
+    } else {
+      setFavPage([]);
+    }
+  }, []);
 
   const { isMobile,
     toggleSidebar } = useSidebar();
@@ -83,10 +98,10 @@ export function AppSidebar() {
               <div className="flex items-center gap-[5px] m-[5px]">
                 <Star color="gold" size={20} />Popular
               </div>
-              {toplang.map((lang,index)=>(
-              <a href={`/${lang.pageName}`}>
-                <SidebarMenuButton key={index}>{lang.pageName.charAt(0).toUpperCase() + lang.pageName.slice(1)}</SidebarMenuButton>
-              </a>
+              {toplang.map((lang, index) => (
+                <a href={`/${lang.pageName}`}>
+                  <SidebarMenuButton key={index}>{lang.pageName.charAt(0).toUpperCase() + lang.pageName.slice(1)}</SidebarMenuButton>
+                </a>
               ))}
             </SidebarGroupContent>
           </SidebarGroup>
@@ -118,6 +133,45 @@ export function AppSidebar() {
           </SidebarGroupContent>
         </SidebarGroup>
       </SidebarContent>
+
+
+
+      <SidebarFooter>
+        <SidebarMenu>
+          <SidebarMenuItem>
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <SidebarMenuButton>
+                  <Star fill="gold" color="gold" /> Favourites
+                  <ChevronUp className="ml-auto" />
+                </SidebarMenuButton>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent
+                side="top"
+                className="w-[--radix-popper-anchor-width]"
+              >
+                {favPages.map((page,index) => (
+                  <DropdownMenuItem key={index} onClick={() => {
+                    if (isMobile) {
+                      toggleSidebar();
+                    }
+                  }}>
+                    <a href={`/${page.toLowerCase()}`}>
+                      {page}
+                    </a>
+                  </DropdownMenuItem>
+                ))}
+
+
+              </DropdownMenuContent>
+            </DropdownMenu>
+          </SidebarMenuItem>
+        </SidebarMenu>
+      </SidebarFooter>
+
+
+
+
     </Sidebar>
   )
 }
