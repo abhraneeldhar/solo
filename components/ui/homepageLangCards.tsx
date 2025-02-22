@@ -84,7 +84,7 @@ export default function HomepageLangCards() {
         }
         else {
             for (let i = 0; i < cards.length; i++) {
-                if (cards[i].name.includes(e.target.value)) {
+                if (cards[i].name.toLowerCase().includes(e.target.value.toLowerCase())) {
                     setDisplayCards([cards[i]]);
                 }
             }

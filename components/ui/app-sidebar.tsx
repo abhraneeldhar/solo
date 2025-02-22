@@ -100,7 +100,7 @@ export function AppSidebar() {
               </div>
               {toplang.map((lang, index) => (
                 <a href={`/${lang.pageName}`}>
-                  <SidebarMenuButton key={index}>{lang.pageName.charAt(0).toUpperCase() + lang.pageName.slice(1)}</SidebarMenuButton>
+                  <SidebarMenuButton className="focus:outline-none" key={index}>{lang.pageName.charAt(0).toUpperCase() + lang.pageName.slice(1)}</SidebarMenuButton>
                 </a>
               ))}
             </SidebarGroupContent>
