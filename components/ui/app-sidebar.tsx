@@ -25,6 +25,7 @@ import { useEffect, useState } from "react"
 import { usePathname } from "next/navigation"
 import { ScrollArea, ScrollAreaScrollbar, ScrollAreaThumb, ScrollAreaViewport, Thumb } from "@radix-ui/react-scroll-area"
 import { ScrollBar } from "./scroll-area"
+import { Separator } from "@radix-ui/react-separator"
 
 
 
@@ -38,6 +39,10 @@ export function AppSidebar() {
   //   }
   // }, [])
 
+  const tags = Array.from({ length: 50 }).map(
+    (_, i, a) => `v1.2.0-beta.${a.length - i}`
+  )
+  
   return (
     <Sidebar className={styles.sidebarMain}>
       <SidebarHeader>
@@ -78,20 +83,17 @@ export function AppSidebar() {
         <SidebarGroup>
           <SidebarMenuButton><Smartphone color="#08f8a9" />Reference</SidebarMenuButton>
           <SidebarGroupContent>
-            <ScrollArea className="h-[200px] rounded-md border p-4">
-
-              <div className={styles.menuScrollDiv}>
-                <SidebarMenu>
-                  {sidebarMenu.map((item, index) => (
-                    <SidebarMenuItem key={index}>
-                      <SidebarMenuButton asChild>
-                        <a href={`#${item.split(' ').join('')}`}>
-                          <span>{item}</span>
-                        </a>
-                      </SidebarMenuButton>
-                    </SidebarMenuItem>
-                  ))}
-                </SidebarMenu>
+            <ScrollArea className="h-72 w-48 rounded-md border">
+              <div className="p-4">
+                <h4 className="mb-4 text-sm font-medium leading-none">Tags</h4>
+                {tags.map((tag) => (
+                  <>
+                    <div key={tag} className="text-sm">
+                      {tag}
+                    </div>
+                    <Separator className="my-2" />
+                  </>
+                ))}
               </div>
             </ScrollArea>
           </SidebarGroupContent>
