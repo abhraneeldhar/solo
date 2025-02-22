@@ -14,6 +14,7 @@ import {
   SidebarMenuSub,
   SidebarMenuSubItem,
   SidebarSeparator,
+  useSidebar,
 } from "@/components/ui/sidebar"
 
 import Image from "next/image"
@@ -43,6 +44,8 @@ export function AppSidebar() {
 
   useEffect(() => { console.log(sidebarMenu); }, [sidebarMenu])
 
+  const {isMobile,
+    toggleSidebar}=useSidebar();
   return (
     <Sidebar className={styles.sidebarMain}>
       <SidebarHeader>
@@ -57,27 +60,15 @@ export function AppSidebar() {
 
         <SidebarGroup>
           <SidebarGroupContent>
-            <Collapsible defaultOpen className="group/collapsible">
-              <CollapsibleTrigger asChild>
-                <div className="flex items-center gap-[5px] m-[5px]">
-                  <Star color="gold" size={20} />Popular
-                </div>
-              </CollapsibleTrigger>
-              <CollapsibleContent>
-                <SidebarMenu>
-                  <SidebarMenuItem>
-                    <SidebarMenuButton>
-                      Python
-                    </SidebarMenuButton>
-                  </SidebarMenuItem>
-                  <SidebarMenuItem>
-                    <SidebarMenuButton>
-                      Javascript
-                    </SidebarMenuButton>
-                  </SidebarMenuItem>
-                </SidebarMenu>
-              </CollapsibleContent>
-            </Collapsible>
+            <div className="flex items-center gap-[5px] m-[5px]">
+              <Star color="gold" size={20} />Popular
+            </div>
+              <SidebarMenuButton>
+                Python
+              </SidebarMenuButton>
+              <SidebarMenuButton>
+                Javascript
+              </SidebarMenuButton>
           </SidebarGroupContent>
         </SidebarGroup>
 
@@ -93,8 +84,11 @@ export function AppSidebar() {
 
                 {sidebarMenu.map((topic, index) => (<>
                   {index > 0 && <SidebarSeparator key={Math.random()} />}
-                  <a key={Math.random()} href={`#${topic.id}`}>
-                    <SidebarMenuItem  className={styles.referenceOption}>
+                  <a onClick={()=>{
+                    if(isMobile){
+                      toggleSidebar();
+                  }}} key={Math.random()} href={`#${topic.id}`}>
+                    <SidebarMenuItem className={styles.referenceOption}>
                       {topic.title}
                     </SidebarMenuItem>
                   </a>
