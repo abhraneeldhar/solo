@@ -100,7 +100,7 @@ export function AppSidebar() {
               </div>
               {toplang.map((lang, index) => (
                 <a href={`/${lang.pageName}`}>
-                  <SidebarMenuButton className="focus:outline-none" key={index}>{lang.pageName.charAt(0).toUpperCase() + lang.pageName.slice(1)}</SidebarMenuButton>
+                  <SidebarMenuButton className={styles.sidebarMenuBtn} key={index}>{lang.pageName.charAt(0).toUpperCase() + lang.pageName.slice(1)}</SidebarMenuButton>
                 </a>
               ))}
             </SidebarGroupContent>
@@ -141,7 +141,7 @@ export function AppSidebar() {
           <SidebarMenuItem>
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <SidebarMenuButton>
+                <SidebarMenuButton className={styles.sidebarMenuBtn}>
                   <Star fill="gold" color="gold" /> Favourites
                   <ChevronUp className="ml-auto" />
                 </SidebarMenuButton>

@@ -26,6 +26,14 @@
     width: 50px;
     border-radius: 10px;
 }
+.sidebarMenuBtn:focus{
+    outline: none;
+    border: none;
+}
+.sidebarMenuBtn:active{
+    border: none;
+    outline: none;
+}
 .referenceScroll{
     max-height: 60vh;
     /* background-color: #00292065; */
