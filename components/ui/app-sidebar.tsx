@@ -80,7 +80,7 @@ export function AppSidebar() {
           </div>
           <SidebarGroupContent>
             <SidebarMenu>
-              <ScrollArea className={`h-[55vh] ${styles.referenceScroll}`}>
+              <ScrollArea key={1} className={`h-[55vh] ${styles.referenceScroll}`}>
 
                 {sidebarMenu.map((topic, index) => (<>
                   {index > 0 && <SidebarSeparator key={Math.random()} />}
@@ -93,9 +93,6 @@ export function AppSidebar() {
                     </SidebarMenuItem>
                   </a>
                 </>))}
-
-
-
               </ScrollArea>
             </SidebarMenu>
           </SidebarGroupContent>

@@ -5,35 +5,7 @@ export default function HTML() {
     return (<>
         <div className="referenceMain">
             <h1 className="header">HTML</h1>
-            <hr className="ruleTypeShi" />
-
-            <h1 className="topic1">Common Mistakes</h1>
-
-            <h1 className="topic2"><CheckCheck />Unclosed Tags/Mismatched Nesting</h1>
-            <div className="textSection">
-                <strong>Issue:</strong> Browser rendering inconsistencies<br />
-                <strong>Fix:</strong> Always close tags and maintain hierarchy
-                <CodeSnippet code={
-                    `<!-- ❌🚫 Wrong: Tag mismatch chaos -->
-<div><p>Text</div></p>
-
-<!-- ✅✨ Correct: Proper hierarchy -->
-<div><p>Text</p></div>`
-                } />
-            </div>
-
-            <h1 className="topic2"><CheckCheck />Missing DOCTYPE</h1>
-            <div className="textSection">
-                <CodeSnippet code={
-                    `<!-- ❌👻 Triggers quirks mode -->
-<html>
-...
-</html>
-
-<!-- ✅📜 HTML5 document declaration -->
-<!DOCTYPE html>`
-                } />
-            </div>
+            
 
             <hr className="ruleTypeShi" />
             <h1 className="topic1">Syntax & Basics</h1>
@@ -237,57 +209,6 @@ export default function HTML() {
             </div>
 
             <hr className="ruleTypeShi" />
-            <h1 className="topic1">Best Practices</h1>
-
-            <h1 className="topic2"><CheckCheck />Responsive Meta Tag</h1>
-            <div className="textSection">
-                <CodeSnippet code={
-                    `<!-- 📱 Mobile viewport setup -->
-<meta name="viewport" content="width=device-width, initial-scale=1.0">`
-                } />
-            </div>
-
-            <h1 className="topic2"><CheckCheck />Performance Optimization</h1>
-            <div className="textSection">
-                <CodeSnippet code={
-                    `<!-- 🚀 Performance techniques -->
-<img src="image.jpg" loading="lazy" alt="...">
-<link rel="preload" href="font.woff2" as="font">`
-                } />
-            </div>
-
-            <hr className="ruleTypeShi" />
-            <h1 className="topic1">HTML5 APIs</h1>
-
-            <h1 className="topic2"><CheckCheck />Web Storage</h1>
-            <div className="textSection">
-                <CodeSnippet code={
-                    `<!-- 💾 Client-side storage -->
-<script>
-localStorage.setItem('theme', 'dark');
-const theme = localStorage.getItem('theme');
-</script>`
-                } />
-            </div>
-
-            <h1 className="topic2"><CheckCheck />Canvas</h1>
-            <div className="textSection">
-                <CodeSnippet code={
-                    `<!-- 🎨 Dynamic graphics container -->
-<canvas id="myCanvas" width="200" height="100">
-    <!-- 📝 Fallback content -->
-</canvas>
-
-<!-- 🛠️ JavaScript drawing -->
-<script>
-    const ctx = document.getElementById('myCanvas').getContext('2d');
-    ctx.fillStyle = 'red';
-    ctx.fillRect(10, 10, 50, 50);
-</script>`
-                } />
-            </div>
-
-            <hr className="ruleTypeShi" />
             <h1 className="topic1">SEO Fundamentals</h1>
 
             <h1 className="topic2"><CheckCheck />Meta Tags</h1>
@@ -314,6 +235,38 @@ const theme = localStorage.getItem('theme');
 </script>`
                 } />
             </div>
+
+
+
+            <hr className="ruleTypeShi" />
+            <h1 className="topic1">Common Mistakes</h1>
+
+            <h1 className="topic2"><CheckCheck />Unclosed Tags/Mismatched Nesting</h1>
+            <div className="textSection">
+                <strong>Issue:</strong> Browser rendering inconsistencies<br />
+                <strong>Fix:</strong> Always close tags and maintain hierarchy
+                <CodeSnippet code={
+                    `<!-- ❌🚫 Wrong: Tag mismatch chaos -->
+<div><p>Text</div></p>
+
+<!-- ✅✨ Correct: Proper hierarchy -->
+<div><p>Text</p></div>`
+                } />
+            </div>
+
+            <h1 className="topic2"><CheckCheck />Missing DOCTYPE</h1>
+            <div className="textSection">
+                <CodeSnippet code={
+                    `<!-- ❌👻 Triggers quirks mode -->
+<html>
+...
+</html>
+
+<!-- ✅📜 HTML5 document declaration -->
+<!DOCTYPE html>`
+                } />
+            </div>
+
         </div>
     </>)
 }

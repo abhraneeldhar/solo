@@ -291,46 +291,6 @@ class ValidationError extends Error {
 }`
                 } />
             </div>
-
-            <hr className="ruleTypeShi" />
-            <h1 className="topic1">Best Practices</h1>
-
-            <h1 className="topic2"><CheckCheck/>Performance</h1>
-            <div className="textSection">
-                <CodeSnippet code={
-                    `// 🚀 Debounce function
-function debounce(func, delay) {
-    let timeout;
-    return (...args) => {
-        clearTimeout(timeout);
-        timeout = setTimeout(() => func(...args), delay);
-    };
-}`
-                } />
-            </div>
-
-            <h1 className="topic2"><CheckCheck/>Memory Management</h1>
-            <div className="textSection">
-                <CodeSnippet code={
-                    `// 🧼 Clean up resources
-(function() {
-    const privateData = 'hidden';
-})();
-
-element.removeEventListener('click', handler);`
-                } />
-            </div>
-
-            <h1 className="topic2"><CheckCheck/>Code Quality</h1>
-            <div className="textSection">
-                <CodeSnippet code={
-                    `// 📦 Module pattern
-import { util } from './utils.js';
-
-// 🔍 Linting & types
-// Use ESLint/TypeScript for better code`
-                } />
-            </div>
         </div>
     </>)
 }
