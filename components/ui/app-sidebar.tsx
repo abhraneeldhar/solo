@@ -31,14 +31,17 @@ import { Separator } from "@radix-ui/react-separator"
 
 export function AppSidebar() {
 
-  const [sidebarMenu, setSidebarMenu] = useState<string[]>([])
+  const [sidebarMenu, setSidebarMenu] = useState<{ title: string, id: string }[]>([])
   useEffect(() => {
     const topic2 = document.getElementsByClassName("topic1");
     for (let i = 0; i < topic2.length; i++) {
-      setSidebarMenu((e) => [...e, topic2[i].textContent || ""])
+      setSidebarMenu((e) => [...e, { title: topic2[i].textContent || "", id: topic2[i].id || "" }])
+      console.log(topic2[i]);
     }
+
   }, [])
 
+  useEffect(() => { console.log(sidebarMenu); }, [sidebarMenu])
 
   return (
     <Sidebar className={styles.sidebarMain}>
@@ -56,7 +59,9 @@ export function AppSidebar() {
           <SidebarGroupContent>
             <Collapsible defaultOpen className="group/collapsible">
               <CollapsibleTrigger asChild>
-                <SidebarMenuButton><Star color="gold" />Popular</SidebarMenuButton>
+                <div className="flex items-center gap-[5px] m-[5px]">
+                  <Star color="gold" size={20} />Popular
+                </div>
               </CollapsibleTrigger>
               <CollapsibleContent>
                 <SidebarMenu>
@@ -78,20 +83,27 @@ export function AppSidebar() {
 
 
         <SidebarGroup>
-          <SidebarMenuButton><Smartphone color="#08f8a9" />Reference</SidebarMenuButton>
+          <div className="flex items-center gap-[5px] m-[5px]"
+          >
+            <Smartphone color="#08f8a9" size={20} />Reference
+          </div>
           <SidebarGroupContent>
-            <ScrollArea className={`h-[60vh] ${styles.referenceScroll}`}>
-              <SidebarMenu>
+            <SidebarMenu>
+              <ScrollArea className={`h-[55vh] ${styles.referenceScroll}`}>
 
-                {sidebarMenu.map((topic) => (<>
-                  <SidebarMenuItem className={styles.referenceOption}>{topic}</SidebarMenuItem>
-                  <SidebarSeparator/>
+                {sidebarMenu.map((topic, index) => (<>
+                  {index > 0 && <SidebarSeparator key={Math.random()} />}
+                  <a key={Math.random()} href={`#${topic.id}`}>
+                    <SidebarMenuItem  className={styles.referenceOption}>
+                      {topic.title}
+                    </SidebarMenuItem>
+                  </a>
                 </>))}
 
-              </SidebarMenu>
-            </ScrollArea>
 
 
+              </ScrollArea>
+            </SidebarMenu>
           </SidebarGroupContent>
         </SidebarGroup>
       </SidebarContent>

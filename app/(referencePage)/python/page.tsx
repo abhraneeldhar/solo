@@ -10,7 +10,7 @@ export default function PythonPage() {
 
 
             <hr className="ruleTypeShi" />
-            <h1 className="topic1">Syntax</h1>
+            <h1 id="syntax" className="topic1">Syntax</h1>
             <h1 className="topic2"><CheckCheck />Variables & Data Types</h1>
             <div className="textSection">
                 <CodeSnippet code={
@@ -128,7 +128,7 @@ print(f"You're {age} years old")`
 
 
             <hr className="ruleTypeShi" />
-            <h1 className="topic1">Common Data Structures</h1>
+            <h1 id="ds" className="topic1">Common Data Structures</h1>
 
             <h1 className="topic2"><CheckCheck />Strings</h1>
             <div className="textSection">
@@ -326,7 +326,7 @@ print(person1.name)  # ➝ Alice 📜`
 
             <hr className="ruleTypeShi" />
 
-            <h1 className="topic1">Functions</h1>
+            <h1 id="functions" className="topic1">Functions</h1>
             <div className="textSection">
                 <p>Functions allow you to group code into reusable blocks.</p>
                 <h1 className="topic2"><CheckCheck />Function Definition & Usage</h1>
@@ -410,7 +410,7 @@ outer_function()`} />
 
 
             <hr className="ruleTypeShi" />
-            <h1 className="topic1">Object-Oriented Pythoning</h1>
+            <h1 id="oop" className="topic1">Object-Oriented Pythoning</h1>
             <div className="textSection">
                 <h1 className="topic2"><CheckCheck />Defining Classes & Objects</h1>
                 <CodeSnippet code={
@@ -516,7 +516,7 @@ print(v3.x, v3.y)  # ➝ 4, 6`
 
 
             <hr className="ruleTypeShi" />
-            <h1 className="topic1">Common Errors</h1>
+            <h1 id="commonerrors" className="topic1">Common Errors</h1>
             <h1 className="topic2"><CheckCheck />IndentationError</h1>
             <div className="textSection">
                 <strong>Cause :</strong> Inconsistent spaces/tabs in indentation<br />
@@ -554,7 +554,7 @@ if data:
             </div>
 
             <hr className="ruleTypeShi" />
-            <h1 className="topic1">File Handling</h1>
+            <h1 id="fh" className="topic1">File Handling</h1>
             <h1 className="topic2"><CheckCheck />Opening & Closing Files</h1>
             <div className="textSection">
                 <CodeSnippet code={
@@ -721,7 +721,7 @@ print(add(2, 3))`
 
             <hr className="ruleTypeShi" />
 
-            <h1 className="topic1">Exception Handling</h1>
+            <h1 id="excp" className="topic1">Exception Handling</h1>
             <div className="textSection">
                 <CodeSnippet code={
                     `try:
@@ -736,7 +736,7 @@ finally:
 
 
             <hr className="ruleTypeShi" />
-            <h1 className="topic1">Multi-Threading & Async</h1>
+            <h1 id="async" className="topic1">Multi-Threading & Async</h1>
             <div className="textSection">
                 <CodeSnippet code={
                     `import asyncio
