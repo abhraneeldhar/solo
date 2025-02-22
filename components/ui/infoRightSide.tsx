@@ -13,7 +13,7 @@ export default async function InfoRightSide() {
             <div>
                 <h1>Why Solo Dev?</h1>
                 <p>This reference website is <strong>not</strong> for beginners<br />Solo Dev is <strong>strictly</strong> for devs who already know the game and need a beautiful cheat sheet on their second monitor which looks better than GeeksforGeeks</p>
-                <i>this portion goes away when you shrink the screen {`;)`}</i>
+                <i><br/>this portion goes away when you shrink the screen {`;)`}</i>
             </div>
 
             <div className="favLang">
