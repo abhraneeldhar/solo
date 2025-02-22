@@ -133,6 +133,7 @@
   padding: 0px 30px;
   overflow-x: hidden;
   margin-top: 30px;
+  flex: 7;
 }
 
 .header {
@@ -236,11 +237,57 @@
   width: 20px;
 }
 
+.mainReferenceContentLayout{
+  display: flex;
+  background-color: rgba(0, 16, 18, 255);
+}
+.infoRightSideMain{
+  /* background-color: rgba(255, 0, 0, 0.403); */
+  flex: 3.8;
+  height: 90vh;
+  margin-top: 35px;
+  position: sticky;
+  top: 35px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.infoRightSideMain h1{
+  font-size: 30px;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+.infoRightSideMain .favLang h2{
+  font-size: 25px;
+}
+.infoRightSideMain .favLang p{
+  padding-left: 20px;
+}
+.infoRightSideMain .about h2{
+  font-size: 25px;
+  margin-bottom: 10px;
+}
+.infoRightSideMain .about .socialsLinks{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.infoRightSideMain .about .socialsLinks .oneLink{
+  display: flex;
+  gap: 10px;
+  padding-left: 20px;
+}
 
 
 
-
-
+@media (max-width:740px) {
+  .infoRightSideMain{
+    display: none;
+  }
+  
+}
 
 
 
