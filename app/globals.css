@@ -96,7 +96,8 @@
   width: 100%;
   position: fixed;
   z-index: 3;
-  height: 30px;
+  height: 2.5em;
+  /* height: 30px; */
   /* background-color: red; */
   /* justify-content: space-between; */
 }
@@ -115,7 +116,7 @@
 }
 .favStarIcon{
   position: fixed;
-  top: 20px;
+  top: 1.25em;
   right: 20px;
   transform: translateY(-50%);
   z-index: 3;
