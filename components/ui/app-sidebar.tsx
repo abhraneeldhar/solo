@@ -42,8 +42,8 @@ export function AppSidebar() {
   }, [])
 
 
-  const {isMobile,
-    toggleSidebar}=useSidebar();
+  const { isMobile,
+    toggleSidebar } = useSidebar();
   return (
     <Sidebar className={styles.sidebarMain}>
       <SidebarHeader>
@@ -55,19 +55,19 @@ export function AppSidebar() {
         </a>
       </SidebarHeader>
       <SidebarContent>
-        <SidebarMenuButton className="hidden"></SidebarMenuButton>
 
         <SidebarGroup>
           <SidebarGroupContent>
             <div className="flex items-center gap-[5px] m-[5px]">
               <Star color="gold" size={20} />Popular
             </div>
-              <SidebarMenuButton>
-                Python
-              </SidebarMenuButton>
-              <SidebarMenuButton>
-                Javascript
-              </SidebarMenuButton>
+            <SidebarMenuButton className="hidden">aa</SidebarMenuButton>
+            <SidebarMenuButton>
+              Python
+            </SidebarMenuButton>
+            <SidebarMenuButton>
+              Javascript
+            </SidebarMenuButton>
           </SidebarGroupContent>
         </SidebarGroup>
 
@@ -83,10 +83,11 @@ export function AppSidebar() {
 
                 {sidebarMenu.map((topic, index) => (<>
                   {index > 0 && <SidebarSeparator key={Math.random()} />}
-                  <a onClick={()=>{
-                    if(isMobile){
+                  <a onClick={() => {
+                    if (isMobile) {
                       toggleSidebar();
-                  }}} key={Math.random()} href={`#${topic.id}`}>
+                    }
+                  }} key={Math.random()} href={`#${topic.id}`}>
                     <SidebarMenuItem className={styles.referenceOption}>
                       {topic.title}
                     </SidebarMenuItem>
