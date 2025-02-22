@@ -27,6 +27,7 @@ import { useEffect, useState } from "react"
 import { usePathname } from "next/navigation"
 import { ScrollArea, ScrollBar } from "./scroll-area"
 import { Separator } from "@radix-ui/react-separator"
+import { supabase } from "@/utils/supabase/client"
 
 
 
@@ -40,6 +41,26 @@ export function AppSidebar() {
     }
 
   }, [])
+
+
+  const [toplang, setTopLang] = useState<{id:number,pageName:string,visits:string}[] | null>(null)
+  useEffect(() => {
+    const getTopLanguages = async () => {
+
+      const { data, error } = await supabase
+        .from('siteVisits')
+        .select('*')
+        .neq('pageName', 'home')
+        .order('visits', { ascending: false })
+        .limit(3);
+      if (data) {
+        setTopLang(data);
+      }
+    }
+    getTopLanguages();
+  }, []);
+
+  useEffect(()=>{console.log(toplang)},[toplang])
 
 
   const { isMobile,
@@ -56,21 +77,20 @@ export function AppSidebar() {
       </SidebarHeader>
       <SidebarContent>
 
-        <SidebarGroup>
-          <SidebarGroupContent>
-            <div className="flex items-center gap-[5px] m-[5px]">
-              <Star color="gold" size={20} />Popular
-            </div>
-            <SidebarMenuButton className="hidden">aa</SidebarMenuButton>
-            <SidebarMenuButton>
-              Python
-            </SidebarMenuButton>
-            <SidebarMenuButton>
-              Javascript
-            </SidebarMenuButton>
-          </SidebarGroupContent>
-        </SidebarGroup>
-
+        {toplang && (
+          <SidebarGroup>
+            <SidebarGroupContent>
+              <div className="flex items-center gap-[5px] m-[5px]">
+                <Star color="gold" size={20} />Popular
+              </div>
+              {toplang.map((lang,index)=>(
+              <a href={`/${lang.pageName}`}>
+                <SidebarMenuButton key={index}>{lang.pageName.charAt(0).toUpperCase() + lang.pageName.slice(1)}</SidebarMenuButton>
+              </a>
+              ))}
+            </SidebarGroupContent>
+          </SidebarGroup>
+        )}
 
         <SidebarGroup>
           <div className="flex items-center gap-[5px] m-[5px]"
