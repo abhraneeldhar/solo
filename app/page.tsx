@@ -10,6 +10,10 @@ import html from "../public/languageLogos/html.png"
 import typescript from "../public/languageLogos/typescript.png"
 import nextjs from "../public/languageLogos/nextjs.png"
 import ninja from "../public/ninja.png"
+import { supabase } from "@/utils/supabase/client"
+import { useEffect } from "react"
+import VisitCounter from "@/utils/visitCounter"
+import { totalVisits } from "@/utils/totalVisits"
 
 interface cardDetailType {
   name: string,
@@ -18,7 +22,10 @@ interface cardDetailType {
   link: string
 }
 
-export default function Home() {
+export default async function Home() {
+
+
+
   const cards: cardDetailType[] = [{
     name: "Python",
     image: python,
@@ -43,18 +50,20 @@ export default function Home() {
     link: "html"
   },
   {
-    name:"TypeScript",
-    image:typescript,
-    alt:"ts",
-    link:"typescript"
+    name: "TypeScript",
+    image: typescript,
+    alt: "ts",
+    link: "typescript"
   }
-  // {
-  //   name: "NEXTjs",
-  //   image: nextjs,
-  //   alt: "next",
-  //   link: "nextjs"
-  // }
+    // {
+    //   name: "NEXTjs",
+    //   image: nextjs,
+    //   alt: "next",
+    //   link: "nextjs"
+    // }
   ]
+
+
 
   const DisplayCard = ({ cardInfo }: { cardInfo: cardDetailType }) => {
     return (<>
@@ -76,10 +85,12 @@ export default function Home() {
 
   const displayCards = cards;
 
+  const totalVisitsNumber:any= await totalVisits();
+
 
   return (<>
     <div className={styles.homemain}>
-      <div className={styles.visits}><Image className={styles.ninja} src={ninja} alt="" /><h1>4000 visits</h1></div>
+      <div className={styles.visits}><Image className={styles.ninja} src={ninja} alt="" /><h1>{totalVisitsNumber} visits</h1></div>
       <h1 className={styles.bigHeader}>solo <span>Dev</span></h1>
       <p className={styles.headerPara}>Quick cheat sheets for popular programming languages and frameworks<br /> For and by one man teams</p>
       <input className={styles.searchInput} placeholder="Search for popular languages and frameworks..." />

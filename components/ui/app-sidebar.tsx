@@ -37,12 +37,10 @@ export function AppSidebar() {
     const topic2 = document.getElementsByClassName("topic1");
     for (let i = 0; i < topic2.length; i++) {
       setSidebarMenu((e) => [...e, { title: topic2[i].textContent || "", id: topic2[i].id || "" }])
-      console.log(topic2[i]);
     }
 
   }, [])
 
-  useEffect(() => { console.log(sidebarMenu); }, [sidebarMenu])
 
   const {isMobile,
     toggleSidebar}=useSidebar();

@@ -78,6 +78,7 @@
     align-items: center;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    row-gap: 5vw;
 }
 
 .languageCard {
