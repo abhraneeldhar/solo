@@ -60,8 +60,8 @@ export default function TabBar() {
         <div className="tabBarMain">
             <Menu onClick={() => { toggleSidebar(); }} /><h1>{pathName}</h1>
         </div>
-        {favPages?.includes(pathName) && (<Star onClick={async () => { removeFromFav(); }} className="favStarIcon" color="gold" fill="gold" />)}
+        {favPages?.includes(pathName) && (<Star onClick={async () => { removeFromFav(); }} className="favStarIcon" size={30} color="gold" fill="gold" />)}
 
-        {!favPages?.includes(pathName) && (<Star onClick={async () => { addToFav(); }} className="favStarIcon" color="gold" />)}
+        {!favPages?.includes(pathName) && (<Star onClick={async () => { addToFav(); }} className="favStarIcon" size={30} color="gold" />)}
     </>)
 }

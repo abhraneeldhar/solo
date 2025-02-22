@@ -96,6 +96,7 @@
   width: 100%;
   position: fixed;
   z-index: 3;
+  /* justify-content: space-between; */
 }
 
 .tabBarMain svg{
@@ -108,8 +109,8 @@
 }
 .favStarIcon{
   position: fixed;
-  top: 1vw;
-  right: 1vw;
+  top: 15px;
+  right: 15px;
   z-index: 3;
 }
 
