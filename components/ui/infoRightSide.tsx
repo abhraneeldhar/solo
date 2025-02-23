@@ -47,4 +47,3 @@ export default async function InfoRightSide() {
     </>)
 }
 
-export const fetchCache = "force-no-store";
