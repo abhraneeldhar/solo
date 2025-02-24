@@ -1,5 +1,5 @@
 import CodeSnippet from "@/components/ui/codeSnippet";
-import { CheckCheck, Star } from "lucide-react";
+import { CheckCheck } from "lucide-react";
 
 export default function PythonPage() {
 
@@ -8,17 +8,266 @@ export default function PythonPage() {
         <div className="referenceMain">
             <h1 className="header">Python</h1>
 
+            <hr className="ruleTypeShi" />
+            <h1 id="syntax" className="topic1">How to Python 🔥</h1>
+            <p>This is the fastest way to shift into python gear, more indepth references are listed after.</p>
+            <h1 className="topic2"><CheckCheck />Indentation Matters</h1>
+            <div className="textSection">
+                <p>Python uses indentation instead of curly braces <code>{ }</code> to define blocks of code. Incorrect indentation will throw an error.</p>
+                <CodeSnippet code={
+                    `if x > 5:
+    print("x is greater than 5")  # Correct
+print("This is outside the if block")`
+                } />
+            </div>
+
+            <h1 className="topic2"><CheckCheck />No Semicolons</h1>
+            <div className="textSection">
+                <p>Python does not require semicolons at the end of statements.</p>
+                <CodeSnippet code={
+                    `x = 10  # No semicolon needed`
+                } />
+            </div>
+
+            <h1 className="topic2"><CheckCheck />Variables and Types</h1>
+            <div className="textSection">
+                <p>Python is dynamically typed, so you don’t need to declare variable types. Use <code>type()</code> to check the type of a variable.</p>
+                <CodeSnippet code={
+                    `x = 10          # Integer
+x = "Hello"     # Now it's a string
+print(type(x))  # Output: <class 'str'>`
+                } />
+            </div>
+
+            <h1 className="topic2"><CheckCheck />Strings</h1>
+            <div className="textSection">
+                <p>Strings can be enclosed in single quotes, double quotes, or triple quotes for multi-line strings.</p>
+                <CodeSnippet code={
+                    `s = "Hello"
+s = 'Hello'
+s = """This is a
+multi-line string"""`
+                } />
+            </div>
+
+            <h1 className="topic2"><CheckCheck />Lists vs Arrays</h1>
+            <div className="textSection">
+                <p>Python uses lists instead of arrays. Lists are dynamic and can hold mixed types.</p>
+                <CodeSnippet code={
+                    `my_list = [1, 2, 3, "Hello"]`
+                } />
+            </div>
+
+            <h1 className="topic2"><CheckCheck />For Loops</h1>
+            <div className="textSection">
+                <p>Python’s <code>for</code> loop is more like a <code>foreach</code> loop. Use <code>range()</code> for traditional indexing.</p>
+                <CodeSnippet code={
+                    `for i in range(5):  # 0 to 4
+    print(i)`
+                } />
+            </div>
+
+            <h1 className="topic2"><CheckCheck />No Switch-Case</h1>
+            <div className="textSection">
+                <p>Python does not have a <code>switch-case</code> statement. Use <code>if-elif-else</code> or dictionaries instead.</p>
+                <CodeSnippet code={
+                    `choice = 2
+if choice == 1:
+    print("Case 1")
+elif choice == 2:
+    print("Case 2")
+else:
+    print("Default case")`
+                } />
+            </div>
+
+            <h1 className="topic2"><CheckCheck />Functions</h1>
+            <div className="textSection">
+                <p>Use <code>def</code> to define functions. No need to specify return types.</p>
+                <CodeSnippet code={
+                    `def add(a, b):
+    return a + b`
+                } />
+            </div>
+
+            <h1 className="topic2"><CheckCheck />No Increment/Decrement Operators</h1>
+            <div className="textSection">
+                <p>Python does not have <code>++</code> or <code>--</code>. Use <code>+=</code> or <code>-=</code> instead.</p>
+                <CodeSnippet code={
+                    `x = 5
+x += 1  # Equivalent to x++`
+                } />
+            </div>
+
+            <h1 className="topic2"><CheckCheck />Input and Output</h1>
+            <div className="textSection">
+                <p>Use <code>input()</code> to take user input (returns a string) and <code>print()</code> for output.</p>
+                <CodeSnippet code={
+                    `name = input("Enter your name: ")
+print("Hello,", name)`
+                } />
+            </div>
+
+            <h1 className="topic2"><CheckCheck />File Handling</h1>
+            <div className="textSection">
+                <p>Use <code>open()</code> to open files. Always close files with <code>close()</code> or use <code>with</code> for automatic closing.</p>
+                <CodeSnippet code={
+                    `with open("file.txt", "r") as file:
+    content = file.read()`
+                } />
+            </div>
+
+            <h1 className="topic2"><CheckCheck />No Pointers</h1>
+            <div className="textSection">
+                <p>Python does not have pointers. Variables are references to objects.</p>
+                <CodeSnippet code={
+                    `a = [1, 2, 3]
+b = a  # b references the same list as a
+b[0] = 10
+print(a)  # Output: [10, 2, 3]`
+                } />
+            </div>
+
+            <h1 className="topic2"><CheckCheck />Global Variables</h1>
+            <div className="textSection">
+                <p>Use the <code>global</code> keyword to modify global variables inside a function.</p>
+                <CodeSnippet code={
+                    `x = 10
+def change_x():
+    global x
+    x = 20`
+                } />
+            </div>
+
+            <h1 className="topic2"><CheckCheck />List Comprehensions</h1>
+            <div className="textSection">
+                <p>Python has a concise way to create lists using list comprehensions.</p>
+                <CodeSnippet code={
+                    `squares = [x**2 for x in range(10)]`
+                } />
+            </div>
+
+            <h1 className="topic2"><CheckCheck />No Main Function</h1>
+            <div className="textSection">
+                <p>Python scripts don’t require a <code>main()</code> function, but you can use <code>if __name__ == "__main__":</code> to define executable code.</p>
+                <CodeSnippet code={
+                    `def main():
+    print("Hello, World!")
+
+if __name__ == "__main__":
+    main()`
+                } />
+            </div>
+
+            <h1 className="topic2"><CheckCheck />Exception Handling</h1>
+            <div className="textSection">
+                <p>Use <code>try-except</code> for exception handling.</p>
+                <CodeSnippet code={
+                    `try:
+    result = 10 / 0
+except ZeroDivisionError:
+    print("Cannot divide by zero")`
+                } />
+            </div>
+
+          
+
+            <h1 className="topic2"><CheckCheck />Modules and Imports</h1>
+            <div className="textSection">
+                <p>Use <code>import</code> to include modules.</p>
+                <CodeSnippet code={
+                    `import math
+print(math.sqrt(16))  # Output: 4.0`
+                } />
+            </div>
+
+            <h1 className="topic2"><CheckCheck />No <code>null</code></h1>
+            <div className="textSection">
+                <p>Python uses <code>None</code> instead of <code>null</code>.</p>
+                <CodeSnippet code={
+                    `x = None`
+                } />
+            </div>
+
+            <h1 className="topic2"><CheckCheck />Dictionaries</h1>
+            <div className="textSection">
+                <p>Python’s equivalent of a map or hash table is a dictionary.</p>
+                <CodeSnippet code={
+                    `my_dict = {"key1": "value1", "key2": "value2"}
+print(my_dict["key1"])  # Output: value1`
+                } />
+            </div>
+
+            <h1 className="topic2"><CheckCheck />Tuples</h1>
+            <div className="textSection">
+                <p>Tuples are immutable sequences.</p>
+                <CodeSnippet code={
+                    `my_tuple = (1, 2, 3)`
+                } />
+            </div>
+
+            <h1 className="topic2"><CheckCheck />Sets</h1>
+            <div className="textSection">
+                <p>Sets are unordered collections of unique elements.</p>
+                <CodeSnippet code={
+                    `my_set = {1, 2, 3}`
+                } />
+            </div>
+
+            <h1 className="topic2"><CheckCheck />Lambda Functions</h1>
+            <div className="textSection">
+                <p>Python supports anonymous functions using <code>lambda</code>.</p>
+                <CodeSnippet code={
+                    `square = lambda x: x**2
+print(square(5))  # Output: 25`
+                } />
+            </div>
+
+            <h1 className="topic2"><CheckCheck />No <code>do-while</code> Loop</h1>
+            <div className="textSection">
+                <p>Python does not have a <code>do-while</code> loop. Use <code>while</code> with a condition.</p>
+                <CodeSnippet code={
+                    `while True:
+    # Do something
+    if condition:
+        break`
+                } />
+            </div>
+
+            <h1 className="topic2"><CheckCheck />String Formatting</h1>
+            <div className="textSection">
+                <p>Use <code>f-strings</code> (Python 3.6+) for clean string formatting.</p>
+                <CodeSnippet code={
+                    `name = "Alice"
+print(f"Hello, {name}!")`
+                } />
+            </div>
+
+
+
+
+
+
 
             <hr className="ruleTypeShi" />
             <h1 id="syntax" className="topic1">Syntax</h1>
             <h1 className="topic2"><CheckCheck />Variables & Data Types</h1>
             <div className="textSection">
                 <CodeSnippet code={
-                    `x = 10      # Integer
-y = 3.14    # Float
-name = "Alice"  # String
-is_active = True  # Boolean
-data = None  # NoneType
+                    `# 💠 Integer
+x = 10
+
+# 💠 Float
+y = 3.14  
+
+# 💠 String
+name = "Alice"  
+
+# 💠 Boolean
+is_active = True
+
+# 💠 NoneType
+data = None  
 `
                 } />
             </div>
@@ -39,11 +288,11 @@ else:
             <h1 className="topic2"><CheckCheck />Loops</h1>
             <div className="textSection">
                 <CodeSnippet code={
-                    `# For loop
+                    `# 💠 For loop
 for i in range(5):  # 0 to 4
     print(i)
 
-# While loop
+# 💠 While loop
 x = 5
 while x > 0:
     print(x)
@@ -54,22 +303,22 @@ while x > 0:
             <h1 className="topic2"><CheckCheck />Operators</h1>
             <div className="textSection">
                 <CodeSnippet code={
-                    `# Arithmetic operators
-# Addition
+                    `# ♦️Arithmetic operators
+# 💠 Addition
 print(10 + 3)
 
-# Exponentiation
+# 💠 Exponentiation
 print(10 ** 2)
 
-# Floor division
+# 💠 Floor division
 print(10 // 3)  
 
-# Comparison operators
+# 💠 Comparison operators
 x = 5
 print(x == 5)
 print(x != 3)
 
-# Logical operators
+# 💠 Logical operators
 if x > 0 and x < 10:
     print("Valid range")`
                 } />
@@ -112,14 +361,14 @@ def calculate():
             <h1 className="topic2"><CheckCheck />Input/Output</h1>
             <div className="textSection">
                 <CodeSnippet code={
-                    `# Basic output
+                    `# 💠 Basic output
 print("Hello", "World!", sep="-")
 
-# Formatted string (f-string)
+# 💠 Formatted string (f-string)
 name = "Alice"
 print(f"Hello {name}!")
 
-# User input
+# 💠 User input
 age = input("Enter your age: ")
 print(f"You're {age} years old")`
                 } />
@@ -135,21 +384,21 @@ print(f"You're {age} years old")`
                 <p>Strings are immutable sequences used for text manipulation.</p>
                 <h1 className="topic3">String Manipulation and Methods</h1>
                 <CodeSnippet code={
-                    `# String manipulation
+                    `# 💠 String manipulation
 greeting = "Hello, world!"
 
-# Slicing a string
+# 💠 Slicing a string
 # ➝ Hello (First 5 characters) ✂️
 print(greeting[:5])
 
-# String methods
+# 💠 String methods
 # ➝ ['Hello', 'world!'] 🧩
 split_str = greeting.split(", ")
 
 # ➝ 'Hello-world!' ➡️
 joined_str = "-".join(split_str)  
 
-# Removing whitespaces
+# 💠 Removing whitespaces
 str_with_spaces = "   lots of space   "
 print(str_with_spaces.strip())
 # ➝ 'lots of space' ✂️`
@@ -607,12 +856,12 @@ with open('logs.txt', 'a') as f:
 
             <h1 className="topic2"><CheckCheck />File Modes</h1>
             <div className="textSection">
-                <p>r  - Read (default)  <br/>
-w  - Write (overwrite)  <br/>
-a  - Append  <br/>
-r+ - Read + Write <br/> 
-b  - Binary mode  <br/>
-t  - Text mode (default) </p>
+                <p>r  - Read (default)  <br />
+                    w  - Write (overwrite)  <br />
+                    a  - Append  <br />
+                    r+ - Read + Write <br />
+                    b  - Binary mode  <br />
+                    t  - Text mode (default) </p>
             </div>
 
             <h1 className="topic2"><CheckCheck />Working with CSV</h1>
