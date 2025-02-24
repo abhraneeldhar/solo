@@ -8,7 +8,7 @@ export default function Javascript() {
 
             <hr className="ruleTypeShi" />
             <h1 id="syntax" className="topic1">How to Javascript </h1>
-            
+            <p>This is the fastest way to reload the javascript shotgun, more weapon attachments are listed after.</p>
 
             <h1 className="topic2"><CheckCheck />Semicolons</h1>
             <div className="textSection">

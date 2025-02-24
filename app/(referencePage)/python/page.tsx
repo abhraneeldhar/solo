@@ -10,7 +10,7 @@ export default function PythonPage() {
 
             <hr className="ruleTypeShi" />
             <h1 id="syntax" className="topic1">How to Python</h1>
-            <p>This is the fastest way to shift into python gear, more indepth references are listed after.</p>
+            <p>This is the fastest way to shift into python gear, more blinker fluids are listed after.</p>
             <h1 className="topic2"><CheckCheck />Indentation Matters</h1>
             <div className="textSection">
                 <p>Python uses indentation instead of curly braces <code>{ }</code> to define blocks of code. Incorrect indentation will throw an error.</p>
