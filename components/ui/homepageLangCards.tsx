@@ -9,6 +9,7 @@ import javascript from "../../public/languageLogos/javascript.png"
 import css from "../../public/languageLogos/css.png"
 import html from "../../public/languageLogos/html.png"
 import typescript from "../../public/languageLogos/typescript.png"
+import react from "../../public/languageLogos/react.png"
 import nextjs from "../../public/languageLogos/nextjs.png"
 import { ChangeEvent, useEffect, useRef, useState } from "react"
 
@@ -27,7 +28,13 @@ export default function HomepageLangCards() {
         image: python,
         alt: "py",
         link: "python"
-    }, {
+    },{
+        name:"React",
+        image: react,
+        alt:"react",
+        link:"react"
+    },
+    {
         name: "Javascript",
         image: javascript,
         alt: "js",

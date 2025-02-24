@@ -70,28 +70,28 @@ export default function CSS() {
 
             <hr className="ruleTypeShi" />
             <h1 id="animations" className="topic1">Animations</h1>
-            <h1 className="topic2"><CheckCheck/>Keyframes</h1>
+            <h1 className="topic2"><CheckCheck />Keyframes</h1>
             <div className="textSection">
                 <CodeSnippet code={
                     `@keyframes slide {  
   0% { transform: translateX(-100%); }  
   100% { transform: translateX(0); }  
 }  `
-                }/>
+                } />
             </div>
 
             <hr className="ruleTypeShi" />
-<h1 id="var" className="topic1">Variables</h1>
-<div className="textSection">
-    <CodeSnippet code={
-        `:root {  
+            <h1 id="var" className="topic1">Variables</h1>
+            <div className="textSection">
+                <CodeSnippet code={
+                    `:root {  
   --primary-color: #2196F3;  
 }  
 .element {  
   color: var(--primary-color);  
 }  `
-    }/>
-</div>
+                } />
+            </div>
 
 
 
