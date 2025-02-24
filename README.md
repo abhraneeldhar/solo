@@ -1,7 +1,7 @@
-# 💪🏽 SoloDev
+# 💪🏽 [SoloDev](https://solo-dev.vercel.app/)
 > **A one-stop reference sheet for popular programming languages.**
 
-(Visit Solodev)[https://solo-dev.vercel.app/]
+[Visit Solodev](https://solo-dev.vercel.app/)
 
 
 This is **not*** for people to learn coding, this is strictly for people who know the game and need a beautiful refernece sheet on their second monitor which looks better than geeksforgeeks.
