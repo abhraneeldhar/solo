@@ -7,6 +7,8 @@ export default function ReactPage() {
     return (<>
         <div className="referenceMain">
             <h1 className="header">React</h1>
+
+            <hr className="ruleTypeShi" />
             <h1 id="basics" className="topic1">React Basics</h1>
             <h1 className="topic2"><CheckCheck />JSX Syntax</h1>
             <div className="textSection">
@@ -74,6 +76,8 @@ class Button extends React.Component {
                 } />
             </div>
 
+
+            <hr className="ruleTypeShi" />
             <h1 id="hooks" className="topic1">React Hooks</h1>
             <h1 className="topic2"><CheckCheck />useEffect</h1>
             <div className="textSection">
@@ -105,6 +109,8 @@ function useWindowWidth() {
                 } />
             </div>
 
+
+            <hr className="ruleTypeShi" />
             <h1 id="routing" className="topic1">React Router</h1>
             <h1 className="topic2"><CheckCheck />Basic Routing</h1>
             <div className="textSection">
@@ -136,22 +142,7 @@ function BackButton() {
                 } />
             </div>
 
-            <h1 id="performance" className="topic1">Performance</h1>
-            <h1 className="topic2"><CheckCheck />Memoization</h1>
-            <div className="textSection">
-                <CodeSnippet code={
-                    `// 🧠 Prevent unnecessary re-renders
-const MemoizedComponent = React.memo(function MyComponent({ prop }) {
-    /* Renders only when prop changes */
-});
-
-// 🧠 Memoize expensive calculations
-const result = useMemo(() => calculateValue(dep), [dep]);`
-                } />
-            </div>
-
-
-
-
-        </div></>)
+        </div>
+        
+        </>)
 }
