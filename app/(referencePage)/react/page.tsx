@@ -11,261 +11,156 @@ export default function ReactPage() {
             <hr className="ruleTypeShi" />
             <h1 id="syntax" className="topic1">How to React</h1>
             <p>This is the fastest way React in a building situation, more yapping is listed after.</p>
-            <h1 className="topic2"><CheckCheck />JSX Quirks</h1>
+            <h1 className="topic2"><CheckCheck /> JSX ≠ HTML</h1>
+            <p>Use `{ }` for dynamic content, `className` instead of `class`, and `htmlFor` instead of `for`.</p>
             <div className="textSection">
-                <p>JSX is not HTML and has some unique rules you need to follow.</p>
                 <CodeSnippet code={
-                    `// 🔹 Use className instead of class
-<div className="container">Hello</div>
-
-// 🔹 Self-closing tags are mandatory
-<img src="logo.png" alt="Logo" />  // ✅ Correct
-<img src="logo.png" alt="Logo">     // ❌ Incorrect
-
-// 🔹 Curly braces for JavaScript expressions
-const name = "Alice";
-const greeting = <h1>Hello, {name}!</h1>;`
+                    `<h1>{title}</h1>  // ✅ Correct
+<label htmlFor="input">Name</label>  // ✅ Correct`
                 } />
             </div>
 
-            <h1 className="topic2"><CheckCheck />State Updates Are Asynchronous</h1>
+            <h1 className="topic2"><CheckCheck /> React Doesn’t Update State Immediately</h1>
+            <p>State updates are async. Always use functional updates if relying on previous state.</p>
             <div className="textSection">
-                <p>State updates in React don’t happen immediately. Use the functional form of `setState` if the new state depends on the previous state.</p>
                 <CodeSnippet code={
-                    `// 🔹 Functional setState for dependent updates
-setCount((prevCount) => prevCount + 1);`
+                    `setCount(count + 1); 
+console.log(count); // ❌ Still old value
+
+setCount(prev => prev + 1);  // ✅ Correct`
                 } />
             </div>
 
-            <h1 className="topic2"><CheckCheck />Immutable State Updates</h1>
+            <h1 className="topic2"><CheckCheck /> No Direct DOM Manipulation</h1>
+            <p>Don’t use `document.getElementById`. Use `useRef` instead.</p>
             <div className="textSection">
-                <p>Never mutate state directly. Always create a new object or array when updating state.</p>
                 <CodeSnippet code={
-                    `// ❌ Bad: Direct mutation
-state.items.push(newItem);
-
-// ✅ Good: Create a new array
-setItems([...items, newItem]);`
+                    `const inputRef = useRef(null);
+<input ref={inputRef} />;`
                 } />
             </div>
 
-            <h1 className="topic2"><CheckCheck />Event Handling</h1>
+            <h1 className="topic2"><CheckCheck /> Props Are Immutable</h1>
+            <p>Pass data down but never modify props inside a component.</p>
             <div className="textSection">
-                <p>React uses synthetic events, and event handlers need to be bound correctly in class components.</p>
                 <CodeSnippet code={
-                    `// 🔹 Inline Arrow Function
-<button onClick={() => console.log('Clicked!')}>
-    Click Me
-</button>
-
-// 🔹 Class Method Binding
-class Button extends React.Component {
-    handleClick = () => {
-        console.log('Clicked!');
-    }
-    render() {
-        return <button onClick={this.handleClick}>Click Me</button>;
-    }
+                    `function Child({ count }) {
+    count += 1; // ❌ Wrong
 }`
                 } />
             </div>
 
-            <h1 className="topic2"><CheckCheck />Keys in Lists</h1>
+            <h1 className="topic2"><CheckCheck /> Hooks Have Rules</h1>
+            <p>Only call hooks at the top level. Never use inside loops, conditions, or nested functions.</p>
             <div className="textSection">
-                <p>Always use a unique `key` prop when rendering lists to help React identify which items have changed.</p>
                 <CodeSnippet code={
-                    `{items.map((item) => (
-    <li key={item.id}>{item.name}</li>
-))}`
+                    `// ✅ Correct
+useEffect(() => { console.log("Mounted"); }, []); 
+
+// ❌ Wrong
+if (someCondition) { useEffect(() => { ... }); } `
                 } />
             </div>
 
-            <h1 className="topic2"><CheckCheck />Conditional Rendering</h1>
+            <h1 className="topic2"><CheckCheck /> Always Use a Unique Key in Lists</h1>
+            <p>Keys help React optimize rendering.</p>
             <div className="textSection">
-                <p>Use ternary operators or logical `&&` for conditional rendering in JSX.</p>
                 <CodeSnippet code={
-                    `{isLoggedIn ? <WelcomeMessage /> : <LoginButton />}
-
-{messages.length > 0 && <p>You have new messages!</p>}`
+                    `{items.map(item => <div key={item.id}>{item.name}</div>)} `
                 } />
             </div>
 
-            <h1 className="topic2"><CheckCheck />Controlled vs. Uncontrolled Components</h1>
+            <h1 className="topic2"><CheckCheck /> `useEffect` Runs AFTER Render</h1>
+            <p>It doesn’t block the UI. Cleanup functions handle unmounting.</p>
             <div className="textSection">
-                <p>Controlled components manage state via React, while uncontrolled components rely on the DOM.</p>
                 <CodeSnippet code={
-                    `// 🔹 Controlled Component
-<input value={value} onChange={(e) => setValue(e.target.value)} />
-
-// 🔹 Uncontrolled Component
-const inputRef = useRef();
-<input ref={inputRef} defaultValue="Hello" />`
+                    `useEffect(() => {
+    const interval = setInterval(() => console.log("Tick"), 1000);
+    return () => clearInterval(interval);
+}, []);`
                 } />
             </div>
 
-            <h1 className="topic2"><CheckCheck />Context API</h1>
+            <h1 className="topic2"><CheckCheck /> Event Handling is Different</h1>
+            <p>Use camelCase for event names and pass functions, don’t call them.</p>
             <div className="textSection">
-                <p>Use `createContext`, `Provider`, and `useContext` for global state management without prop drilling.</p>
                 <CodeSnippet code={
-                    `const ThemeContext = React.createContext('light');
+                    `<button onClick={handleClick}>Click</button>  // ✅ Correct
+<button onClick={handleClick()}>Click</button>  // ❌ Wrong`
+                } />
+            </div>
 
+            <h1 className="topic2"><CheckCheck /> Forms? Use Controlled Components</h1>
+            <p>Don’t use `document.getElementById`, use state to handle inputs.</p>
+            <div className="textSection">
+                <CodeSnippet code={
+                    `const [name, setName] = useState("");
+<input value={name} onChange={e => setName(e.target.value)} />;`
+                } />
+            </div>
+
+            <h1 className="topic2"><CheckCheck /> Use {`<Link>`} Instead of {`<a>`} in React Router</h1>
+            <p>React Router prevents full-page reloads.</p>
+            <div className="textSection">
+                <CodeSnippet code={
+                    `<Link to="/about">About</Link>  // ✅ Correct
+<a href="/about">About</a>  // ❌ Wrong`
+                } />
+            </div>
+
+            <h1 className="topic2"><CheckCheck /> No Global State? Use Context API or Redux</h1>
+            <p>Context API for simple cases, Redux/Zustand/Recoil for complex state management.</p>
+            <div className="textSection">
+                <CodeSnippet code={
+                    `const UserContext = createContext();
 function App() {
-    return (
-        <ThemeContext.Provider value="dark">
-            <Toolbar />
-        </ThemeContext.Provider>
-    );
-}
-
-function Toolbar() {
-    const theme = useContext(ThemeContext);
-    return <button style={{ background: theme }}>Click Me</button>;
+    return <UserContext.Provider value={user}>{children}</UserContext.Provider>;
 }`
                 } />
             </div>
 
-            <h1 className="topic2"><CheckCheck />Hooks Rules</h1>
+            <h1 className="topic2"><CheckCheck /> CSS Modules Auto-Scope Class Names</h1>
+            <p>Import styles properly instead of using global CSS.</p>
             <div className="textSection">
-                <p>Hooks must be called at the top level of a functional component and in the same order on every render.</p>
                 <CodeSnippet code={
-                    `// ❌ Bad: Hooks inside conditions
-if (condition) {
-    useEffect(() => {});
-}
-
-// ✅ Good: Hooks at the top level
-useEffect(() => {});`
+                    `import styles from "./Button.module.css";
+<button className={styles.btn}>Click</button>;`
                 } />
             </div>
 
-            <h1 className="topic2"><CheckCheck />Performance Pitfalls</h1>
+            <h1 className="topic2"><CheckCheck /> Next.js Has Built-in Routing & SSR</h1>
+            <p>Use file-based routing and server-side rendering (`getServerSideProps`).</p>
             <div className="textSection">
-                <p>Avoid unnecessary re-renders with `React.memo`, `useMemo`, and `useCallback`.</p>
                 <CodeSnippet code={
-                    `// 🔹 Memoize a component
-const MemoizedComponent = React.memo(function MyComponent({ prop }) {
-    return <div>{prop}</div>;
-});
-
-// 🔹 Memoize a value
-const memoizedValue = useMemo(() => computeExpensiveValue(dep), [dep]);`
-                } />
-            </div>
-
-            <h1 className="topic2"><CheckCheck />React Router Quirks</h1>
-            <div className="textSection">
-                <p>React Router v6 uses `element` instead of `component` and `useNavigate` instead of `useHistory`.</p>
-                <CodeSnippet code={
-                    `// 🔹 React Router v6
-<Route path="/about" element={<About />} />
-
-// 🔹 Navigation with useNavigate
-const navigate = useNavigate();
-navigate('/home');`
-                } />
-            </div>
-
-            <h1 className="topic2"><CheckCheck />Error Boundaries</h1>
-            <div className="textSection">
-                <p>Use `componentDidCatch` in class components to catch errors in child components.</p>
-                <CodeSnippet code={
-                    `class ErrorBoundary extends React.Component {
-    state = { hasError: false };
-    componentDidCatch(error, info) {
-        this.setState({ hasError: true });
-    }
-    render() {
-        if (this.state.hasError) {
-            return <h1>Something went wrong.</h1>;
-        }
-        return this.props.children;
-    }
+                    `export async function getServerSideProps() {
+    const data = await fetchData();
+    return { props: { data } };
 }`
                 } />
             </div>
 
-            <h1 className="topic2"><CheckCheck />Fragments</h1>
+            <h1 className="topic2"><CheckCheck /> Avoid Unnecessary Renders</h1>
+            <p>Use `React.memo`, `useMemo`, and `useCallback` for performance optimizations.</p>
             <div className="textSection">
-                <p>Use `<></>` or {`<React.Fragment>`} to group multiple elements without adding extra nodes to the DOM.</p>
                 <CodeSnippet code={
-                    `// 🔹 Using Fragments
-return (
-    <>
-        <h1>Title</h1>
-        <p>Description</p>
-    </>
-);`
+                    `const MemoizedComponent = React.memo(MyComponent);
+const cachedFunction = useCallback(() => doSomething(), []);`
                 } />
             </div>
 
-            <h1 className="topic2"><CheckCheck />Portals</h1>
+            <h1 className="topic2"><CheckCheck /> React is Declarative, Not Imperative</h1>
+            <p>Don’t manually manipulate the DOM. Change state, let React handle UI updates.</p>
             <div className="textSection">
-                <p>Use `ReactDOM.createPortal` to render children outside the DOM hierarchy of the parent component.</p>
                 <CodeSnippet code={
-                    `// 🔹 Creating a Portal
-function Modal({ children }) {
-    return ReactDOM.createPortal(
-        <div className="modal">{children}</div>,
-        document.getElementById('modal-root')
-    );
-}`
+                    `setCount(5);  // ✅ Let React re-render
+document.getElementById("counter").innerText = 5;  // ❌ Wrong`
                 } />
             </div>
 
-            <h1 className="topic2"><CheckCheck />Refs</h1>
-            <div className="textSection">
-                <p>Use `useRef` to access DOM elements or persist values across renders without triggering re-renders.</p>
-                <CodeSnippet code={
-                    `// 🔹 Accessing a DOM element
-const inputRef = useRef();
-<input ref={inputRef} type="text" />`
-                } />
-            </div>
 
-            <h1 className="topic2"><CheckCheck />Custom Hooks</h1>
-            <div className="textSection">
-                <p>Create reusable logic with custom hooks (e.g., `useFetch`, `useLocalStorage`).</p>
-                <CodeSnippet code={
-                    `// 🔹 Custom Hook Example
-function useFetch(url) {
-    const [data, setData] = useState(null);
-    useEffect(() => {
-        fetch(url)
-            .then((response) => response.json())
-            .then((data) => setData(data));
-    }, [url]);
-    return data;
-}`
-                } />
-            </div>
 
-            <h1 className="topic2"><CheckCheck />React 18 Features</h1>
-            <div className="textSection">
-                <p>React 18 introduces concurrent rendering with `startTransition` and `useTransition`.</p>
-                <CodeSnippet code={
-                    `// 🔹 Using useTransition
-const [isPending, startTransition] = useTransition();
-startTransition(() => {
-    setState(newState);
-});`
-                } />
-            </div>
 
-            <h1 className="topic2"><CheckCheck />TypeScript with React</h1>
-            <div className="textSection">
-                <p>Use `React.FC` for functional components and define prop types with interfaces or types.</p>
-                <CodeSnippet code={
-                    `// 🔹 Typing Props
-interface Props {
-    name: string;
-    age: number;
-}
 
-const Greeting: React.FC<Props> = ({ name, age }) => {
-    return <h1>Hello, {name}! You are {age} years old.</h1>;
-};`
-                } />
-            </div>
 
 
 
@@ -273,6 +168,7 @@ const Greeting: React.FC<Props> = ({ name, age }) => {
 
             <hr className="ruleTypeShi" />
             <h1 id="basics" className="topic1">React Basics</h1>
+
             <h1 className="topic2"><CheckCheck />JSX Syntax</h1>
             <div className="textSection">
                 <CodeSnippet code={
@@ -305,16 +201,20 @@ class Greeting extends React.Component {
                 } />
             </div>
 
-            <h1 className="topic2"><CheckCheck />State</h1>
+            <h1 className="topic2"><CheckCheck />State & Props</h1>
             <div className="textSection">
                 <CodeSnippet code={
-                    `// 🎣 useState Hook (Functional)
-const [count, setCount] = useState(0);
+                    `// 🔹 useState Hook (Functional Component)
+import { useState } from "react";
 
-// ⚙️ Class Component State
-constructor(props) {
-    super(props);
-    this.state = { count: 0 };
+function Counter() {
+    const [count, setCount] = useState(0);
+    return (
+        <div>
+            <p>Count: {count}</p>
+            <button onClick={() => setCount(count + 1)}>Increment</button>
+        </div>
+    );
 }`
                 } />
             </div>
@@ -322,67 +222,70 @@ constructor(props) {
             <h1 className="topic2"><CheckCheck />Event Handling</h1>
             <div className="textSection">
                 <CodeSnippet code={
-                    `// 🔹 Inline Arrow Function
-<button onClick={() => console.log('Clicked!')}>
-    Click Me
-</button>
+                    `// 🔹 Handling Events in React
+function Button() {
+    function handleClick() {
+        alert("Button clicked!");
+    }
+    return <button onClick={handleClick}>Click me</button>;
+}
 
-// 🔹 Class Method Binding
-class Button extends React.Component {
-    handleClick = () => {
-        console.log('Clicked!');
-    }
-    render() {
-        return <button onClick={this.handleClick}>Click Me</button>;
-    }
-}`
+// ⚠️ Do not use handleClick() instead of handleClick in onClick!`
                 } />
             </div>
 
-
-            <hr className="ruleTypeShi" />
-            <h1 id="hooks" className="topic1">React Hooks</h1>
-            <h1 className="topic2"><CheckCheck />useEffect</h1>
+            <h1 className="topic2"><CheckCheck />useEffect Hook</h1>
             <div className="textSection">
                 <CodeSnippet code={
-                    `// 🧹 Cleanup Example
-useEffect(() => {
-    const timer = setInterval(() => {
-        console.log('Tick');
-    }, 1000);
-    
-    return () => clearInterval(timer); // Cleanup
-}, []);`
-                } />
-            </div>
+                    `// 🔹 useEffect: Runs after render
+import { useEffect, useState } from "react";
 
-            <h1 className="topic2"><CheckCheck />Custom Hooks</h1>
-            <div className="textSection">
-                <CodeSnippet code={
-                    `// 🔧 Create reusable logic
-function useWindowWidth() {
-    const [width, setWidth] = useState(window.innerWidth);
+function Timer() {
+    const [seconds, setSeconds] = useState(0);
+
     useEffect(() => {
-        const handleResize = () => setWidth(window.innerWidth);
-        window.addEventListener('resize', handleResize);
-        return () => window.removeEventListener('resize', handleResize);
-    }, []);
-    return width;
+        const interval = setInterval(() => {
+            setSeconds(prev => prev + 1);
+        }, 1000);
+
+        return () => clearInterval(interval); // Cleanup function
+    }, []); // Empty array = run only on mount
+
+    return <p>Time: {seconds} seconds</p>;
 }`
                 } />
             </div>
 
-
-            <hr className="ruleTypeShi" />
-            <h1 id="routing" className="topic1">React Router</h1>
-            <h1 className="topic2"><CheckCheck />Basic Routing</h1>
+            <h1 className="topic2"><CheckCheck />useMemo & useCallback</h1>
             <div className="textSection">
                 <CodeSnippet code={
-                    `// 🗺️ Router Setup (v6)
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+                    `// 🔹 useMemo: Optimize expensive calculations
+import { useMemo, useState } from "react";
+
+function ExpensiveCalculation({ num }) {
+    const squared = useMemo(() => {
+        console.log("Calculating...");
+        return num * num;
+    }, [num]);
+
+    return <p>Squared: {squared}</p>;
+}`
+                } />
+            </div>
+
+            <h1 className="topic2"><CheckCheck />React Router</h1>
+            <div className="textSection">
+                <CodeSnippet code={
+                    `// 🔹 React Router Basic Setup
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+
 function App() {
     return (
         <BrowserRouter>
+            <nav>
+                <Link to="/">Home</Link>
+                <Link to="/about">About</Link>
+            </nav>
             <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/about" element={<About />} />
@@ -393,18 +296,118 @@ function App() {
                 } />
             </div>
 
-            <h1 className="topic2"><CheckCheck />Navigation</h1>
+            <h1 className="topic2"><CheckCheck />Global State: Context API</h1>
             <div className="textSection">
                 <CodeSnippet code={
-                    `// 🔗 Using useNavigate Hook (v6)
-import { useNavigate } from 'react-router-dom';
-function BackButton() {
-    const navigate = useNavigate();
-    return <button onClick={() => navigate(-1)}>Go Back</button>;
+                    `// 🔹 Creating a Context
+import { createContext, useContext, useState } from "react";
+
+const ThemeContext = createContext();
+
+function ThemeProvider({ children }) {
+    const [theme, setTheme] = useState("light");
+    return (
+        <ThemeContext.Provider value={{ theme, setTheme }}>
+            {children}
+        </ThemeContext.Provider>
+    );
+}
+
+function ChildComponent() {
+    const { theme, setTheme } = useContext(ThemeContext);
+    return <button onClick={() => setTheme("dark")}>Change Theme</button>;
 }`
                 } />
             </div>
 
+            <h1 className="topic2"><CheckCheck />React Performance Optimization</h1>
+            <div className="textSection">
+                <CodeSnippet code={
+                    `// 🔹 React.memo to Prevent Unnecessary Re-renders
+import React from "react";
+
+const MemoizedComponent = React.memo(({ count }) => {
+    console.log("Rendered!");
+    return <p>Count: {count}</p>;
+});`
+                } />
+            </div>
+
+            <h1 className="topic2"><CheckCheck />Fetching Data (Axios, Fetch API)</h1>
+            <div className="textSection">
+                <CodeSnippet code={
+                    `// 🔹 Fetch API Example
+import { useEffect, useState } from "react";
+
+function DataFetcher() {
+    const [data, setData] = useState(null);
+
+    useEffect(() => {
+        fetch("https://jsonplaceholder.typicode.com/posts/1")
+            .then(response => response.json())
+            .then(json => setData(json));
+    }, []);
+
+    return <pre>{JSON.stringify(data, null, 2)}</pre>;
+}`
+                } />
+            </div>
+
+            <h1 className="topic2"><CheckCheck />Error Boundaries</h1>
+            <div className="textSection">
+                <CodeSnippet code={
+                    `// 🔹 Handling Errors in React
+import React from "react";
+
+class ErrorBoundary extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = { hasError: false };
+    }
+
+    static getDerivedStateFromError(error) {
+        return { hasError: true };
+    }
+
+    render() {
+        if (this.state.hasError) {
+            return <h1>Something went wrong.</h1>;
+        }
+        return this.props.children;
+    }
+}`
+                } />
+            </div>
+
+            <h1 className="topic2"><CheckCheck />React Quirks & Best Practices</h1>
+            <div className="textSection">
+                <CodeSnippet code={
+                    `// 🔹 Unique Keys in Lists
+const items = ["Apple", "Banana", "Cherry"];
+const list = items.map((item, index) => <li key={index}>{item}</li>); // ⚠️ Bad practice!
+const listFixed = items.map((item) => <li key={item}>{item}</li>); // ✅ Good practice
+
+// 🔹 Avoid Mutating State Directly
+setState([...state, newItem]); // ✅ Correct way
+state.push(newItem); // ⚠️ Incorrect way`
+                } />
+            </div>
+
+            <h1 className="topic2"><CheckCheck />Next.js-Specific Topics</h1>
+            <div className="textSection">
+                <CodeSnippet code={
+                    `// 🔹 getStaticProps for Static Site Generation
+export async function getStaticProps() {
+    const res = await fetch("https://jsonplaceholder.typicode.com/posts");
+    const posts = await res.json();
+    return { props: { posts } };
+}
+
+function Home({ posts }) {
+    return <pre>{JSON.stringify(posts, null, 2)}</pre>;
+}`
+                } />
+            </div>
         </div>
 
     </>)
