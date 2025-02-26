@@ -11,6 +11,7 @@ import html from "../../public/languageLogos/html.png"
 import typescript from "../../public/languageLogos/typescript.png"
 import react from "../../public/languageLogos/react.png"
 import cpp from "../../public/languageLogos/cpp.png"
+import c_logo from "../../public/languageLogos/c_logo.png"
 import nextjs from "../../public/languageLogos/nextjs.png"
 import { ChangeEvent, useEffect, useRef, useState } from "react"
 
@@ -34,6 +35,16 @@ export default function HomepageLangCards() {
         image: react,
         alt:"react",
         link:"react"
+    },{
+        name:"C++",
+        image:cpp,
+        alt:"cpp",
+        link:"cpp"
+    },{
+        name:"C",
+        image:c_logo,
+        alt:"c",
+        link:"c"
     },
     {
         name: "Javascript",
@@ -58,11 +69,6 @@ export default function HomepageLangCards() {
         image: typescript,
         alt: "ts",
         link: "typescript"
-    },{
-        name:"C++",
-        image:cpp,
-        alt:"cpp",
-        link:"cpp"
     }
         // {
         //   name: "NEXTjs",
