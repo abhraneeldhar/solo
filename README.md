@@ -4,7 +4,7 @@
 [Visit Solodev](https://solo-dev.vercel.app/)
 
 
-This is **not*** for people to learn coding, this is strictly for people who know the game and need a beautiful refernece sheet on their second monitor which looks better than geeksforgeeks.
+This is **not** for people to learn coding, this is strictly for people who know the game and need a beautiful refernece sheet on their second monitor which looks better than geeksforgeeks.
 (Yes its responsive, revise on your phone no worries) 
 
 
