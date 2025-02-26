@@ -9,7 +9,7 @@ export default function PythonPage() {
             <h1 className="header">Python</h1>
 
             <hr className="ruleTypeShi" />
-            <h1 id="syntax" className="topic1">How to Python</h1>
+            <h1  className="topic1">How to Python</h1>
             <p>This is the fastest way to shift into python gear, more blinker fluids are listed after.</p>
             <h1 className="topic2"><CheckCheck />Indentation Matters</h1>
             <div className="textSection">
