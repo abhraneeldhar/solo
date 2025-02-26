@@ -140,7 +140,7 @@ export function AppSidebar() {
         <SidebarMenu>
           <SidebarMenuItem>
             <DropdownMenu>
-              <DropdownMenuTrigger asChild>
+              <DropdownMenuTrigger className={styles.sidebarMenuBtn} >
                 <SidebarMenuButton className={styles.sidebarMenuBtn}>
                   <Star fill="gold" color="gold" /> Favourites
                   <ChevronUp className="ml-auto" />

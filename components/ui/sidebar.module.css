@@ -26,6 +26,9 @@
     width: 50px;
     border-radius: 10px;
 }
+.sidebarMenuBtn{
+    width: 100%;
+}
 .sidebarMenuBtn:focus{
     outline: none;
     border: none;
