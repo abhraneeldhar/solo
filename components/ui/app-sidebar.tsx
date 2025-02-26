@@ -99,8 +99,8 @@ export function AppSidebar() {
                 <Star color="gold" size={20} />Popular
               </div>
               {toplang.map((lang, index) => (
-                <a href={`/${lang.pageName}`}>
-                  <SidebarMenuButton className={styles.sidebarMenuBtn} key={index}>{lang.pageName.charAt(0).toUpperCase() + lang.pageName.slice(1)}</SidebarMenuButton>
+                <a key={index} href={`/${lang.pageName}`}  className={styles.sidebarMenuBtn}>
+                  <SidebarMenuButton className={styles.sidebarMenuBtn} >{lang.pageName.charAt(0).toUpperCase() + lang.pageName.slice(1)}</SidebarMenuButton>
                 </a>
               ))}
             </SidebarGroupContent>
@@ -140,7 +140,7 @@ export function AppSidebar() {
         <SidebarMenu>
           <SidebarMenuItem>
             <DropdownMenu>
-              <DropdownMenuTrigger className={styles.sidebarMenuBtn} >
+              <DropdownMenuTrigger asChild className={styles.sidebarMenuBtn} >
                 <SidebarMenuButton className={styles.sidebarMenuBtn}>
                   <Star fill="gold" color="gold" /> Favourites
                   <ChevronUp className="ml-auto" />
