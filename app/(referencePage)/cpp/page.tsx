@@ -191,57 +191,208 @@ delete ptr;
                 } />
             </div>
 
+
+
             <hr className="ruleTypeShi" />
             <h1 id="object-oriented-programming" className="topic1">Object-Oriented Programming</h1>
-            <h1 className="topic2"><CheckCheck />Classes and Structs</h1>
-            <div className="textSection">
-                <CodeSnippet code={
-                    `// 🏛️ Class definition
-class MyClass {
-public:
-    int publicVar;              // Public member
-private:
-    int privateVar;             // Private member
-};`
-                } />
-            </div>
 
-            <h1 className="topic2"><CheckCheck />Constructors and Destructors</h1>
+            <h1 className="topic2"><CheckCheck />Classes vs Structs</h1>
             <div className="textSection">
                 <CodeSnippet code={
-                    `// 🏗️ Constructor and destructor
+                    `// 🏛️ Class (default access: private)
 class MyClass {
+    int privateVar;             // Private by default
 public:
-    MyClass() { /* Constructor */ }
-    ~MyClass() { /* Destructor */ }
-};`
-                } />
-            </div>
-
-            <h1 className="topic2"><CheckCheck />Inheritance</h1>
-            <div className="textSection">
-                <CodeSnippet code={
-                    `// 🧬 Inheritance
-class Base {
-public:
-    virtual void foo() { /* Base implementation */ }
+    int publicVar;              // Explicitly public
 };
 
-class Derived : public Base {
-public:
-    void foo() override { /* Derived implementation */ }
+// 🏛️ Struct (default access: public)
+struct MyStruct {
+    int publicVar;              // Public by default
+private:
+    int privateVar;             // Explicitly private
 };`
                 } />
+                <p>Use <strong>classes</strong> for encapsulation and <strong>structs</strong> for data grouping.</p>
+            </div>
+
+            <h1 className="topic2"><CheckCheck />Constructors</h1>
+            <div className="textSection">
+                <CodeSnippet code={
+                    `// 🏗️ Default/Parameterized/Copy/Move Constructors
+class Example {
+public:
+    Example() {}                              // Default
+    Example(int x) : val(x) {}                // Parameterized
+    Example(const Example& other) {           // Copy
+        val = other.val;
+    }
+    Example(Example&& other) noexcept {       // Move
+        val = std::exchange(other.val, 0);
+    }
+private:
+    int val;
+};`
+                } />
+                <p>Constructors initialize objects. Use <strong>initializer lists</strong> for efficiency.</p>
+            </div>
+
+            <h1 className="topic2"><CheckCheck />Destructors</h1>
+            <div className="textSection">
+                <CodeSnippet code={
+                    `// 🧹 Destructor (RAII cleanup)
+class FileHandler {
+public:
+    ~FileHandler() {
+        if (file) fclose(file);   // Release resource
+    }
+private:
+    FILE* file;
+};`
+                } />
+                <p>Destructors automatically release resources when objects go out of scope.</p>
+            </div>
+
+            <h1 className="topic2"><CheckCheck />Inheritance Types</h1>
+            <div className="textSection">
+                <CodeSnippet code={
+                    `// 🧬 Single inheritance
+class Derived : public Base { /*...*/ };
+
+// 🧬 Multiple inheritance
+class Derived : public Base1, public Base2 { /*...*/ };
+
+// 🧬 Virtual inheritance (prevents diamond problem)
+class Derived : virtual public Base { /*...*/ };`
+                } />
+                <p>Use <strong>public inheritance</strong> for "is-a" relationships. Avoid multiple inheritance unless necessary.</p>
             </div>
 
             <h1 className="topic2"><CheckCheck />Polymorphism</h1>
             <div className="textSection">
                 <CodeSnippet code={
-                    `// 🎯 Polymorphism
-Base* obj = new Derived();
-obj->foo();                     // Calls Derived::foo()`
+                    `// 🎯 Virtual functions and overriding
+class Shape {
+public:
+    virtual double area() const = 0;  // Pure virtual (abstract class)
+};
+
+class Circle : public Shape {
+public:
+    double area() const override {    // Must implement
+        return 3.14 * radius * radius;
+    }
+};`
                 } />
+                <p>Mark base class methods as <strong>virtual</strong>. Use <strong>override</strong> to ensure correct polymorphism.</p>
             </div>
+
+            <h1 className="topic2"><CheckCheck />Encapsulation</h1>
+            <div className="textSection">
+                <CodeSnippet code={
+                    `// 🔒 Private members with public getters/setters
+class BankAccount {
+public:
+    double getBalance() const { return balance; }
+    void deposit(double amount) { balance += amount; }
+private:
+    double balance = 0;   // Hidden internal state
+};`
+                } />
+                <p>Expose minimal interfaces. Keep data <strong>private</strong> to enforce invariants.</p>
+            </div>
+
+            <h1 className="topic2"><CheckCheck />Rule of Five</h1>
+            <div className="textSection">
+                <CodeSnippet code={
+                    `// 🛑 Manage resources explicitly
+class ResourceHolder {
+public:
+    ResourceHolder() { ptr = new int[100]; }  // Constructor
+    ~ResourceHolder() { delete[] ptr; }       // Destructor
+    ResourceHolder(const ResourceHolder& other) {  // Copy constructor
+        ptr = new int[100];
+        std::copy(other.ptr, other.ptr + 100, ptr);
+    }
+    ResourceHolder& operator=(const ResourceHolder& other) { // Copy assignment
+        if (this != &other) {
+            delete[] ptr;
+            ptr = new int[100];
+            std::copy(other.ptr, other.ptr + 100, ptr);
+        }
+        return *this;
+    }
+    ResourceHolder(ResourceHolder&& other) noexcept { // Move constructor
+        ptr = other.ptr;
+        other.ptr = nullptr;
+    }
+    ResourceHolder& operator=(ResourceHolder&& other) noexcept { // Move assignment
+        delete[] ptr;
+        ptr = other.ptr;
+        other.ptr = nullptr;
+        return *this;
+    }
+private:
+    int* ptr;
+};`
+                } />
+                <p>If you define a destructor, copy/move operations, you likely need all five.</p>
+            </div>
+
+            <h1 className="topic2"><CheckCheck />Friend Functions/Classes</h1>
+            <div className="textSection">
+                <CodeSnippet code={
+                    `// 🤝 Granting access to private members
+class SecretKeeper {
+    friend class TrustedFriend;   // Friend class
+    friend void peekSecret(const SecretKeeper&); // Friend function
+private:
+    int secret = 42;
+};
+
+class TrustedFriend {
+public:
+    static int getSecret(const SecretKeeper& sk) { return sk.secret; }
+};`
+                } />
+                <p>Use <strong>friend</strong> sparingly to break encapsulation only when necessary.</p>
+            </div>
+
+            <h1 className="topic2"><CheckCheck />Static Members</h1>
+            <div className="textSection">
+                <CodeSnippet code={
+                    `// 🔄 Shared class-level data
+class Counter {
+public:
+    static int count;            // Declaration
+    Counter() { count++; }
+    ~Counter() { count--; }
+};
+int Counter::count = 0;          // Definition (required)`
+                } />
+                <p><strong>Static</strong> members belong to the class, not individual objects.</p>
+            </div>
+
+            <h1 className="topic2"><CheckCheck />Operator Overloading</h1>
+            <div className="textSection">
+                <CodeSnippet code={
+                    `// ➕ Custom operator behavior
+class Vector {
+public:
+    Vector operator+(const Vector& other) const {
+        return Vector(x + other.x, y + other.y);
+    }
+private:
+    double x, y;
+};`
+                } />
+                <p>Overload operators to enable natural syntax for custom types.</p>
+            </div>
+
+
+
+
+
 
             <hr className="ruleTypeShi" />
             <h1 id="stl" className="topic1">Standard Template Library (STL)</h1>
