@@ -137,53 +137,60 @@
     user-select: none;
 }
 
-.Python {
+.python {
     background: rgba(78, 163, 233, 0.4);
 }
 
-.Python img {
-    filter: drop-shadow(0px 0px 30px #3772a3);
+.python img {
+    filter: drop-shadow(0px 0px 30px #42a0ed);
 }
 
-.Javascript {
+.javascript {
     background-color: rgba(251, 215, 37, 0.4);
 }
 
-.Javascript img {
+.javascript img {
     filter: drop-shadow(0px 0px 30px #fbd725);
 
 }
 
-.HTML {
+.html {
     background-color: rgba(241, 101, 41, 0.4);
 }
 
-.HTML img {
+.html img {
     filter: drop-shadow(0px 0px 30px #f16529);
 
 }
 
-.CSS {
+.css {
     background-color: rgba(38, 77, 228, 0.4);
 }
 
-.CSS img {
+.css img {
     filter: drop-shadow(0px 0px 30px #2965f1);
 
 }
 
-.TypeScript{
+.typescript{
     background-color: rgba(49,120,198,0.4);
 }
-.TypeScript img{
+.typescript img{
     filter: drop-shadow(0px 0px 30px #3178c6);
 }
-.React{
+.react{
     background-color: rgba(0,216,255,0.4);
 }
-.React img{
-    filter: drop-shadow(0px 0px 30px #00d8ff);
+.react img{
+    filter: drop-shadow(0px 0px 30px #30d5f2);
 }
+.cpp{
+    background-color:rgba(0,89,156,0.4);
+}
+.cpp img{
+    filter: drop-shadow(0px 0px 30px #659ad2);
+}
+
 
 .NEXTjs {
     background-color: black;

@@ -10,6 +10,7 @@ import css from "../../public/languageLogos/css.png"
 import html from "../../public/languageLogos/html.png"
 import typescript from "../../public/languageLogos/typescript.png"
 import react from "../../public/languageLogos/react.png"
+import cpp from "../../public/languageLogos/cpp.png"
 import nextjs from "../../public/languageLogos/nextjs.png"
 import { ChangeEvent, useEffect, useRef, useState } from "react"
 
@@ -57,6 +58,11 @@ export default function HomepageLangCards() {
         image: typescript,
         alt: "ts",
         link: "typescript"
+    },{
+        name:"C++",
+        image:cpp,
+        alt:"cpp",
+        link:"cpp"
     }
         // {
         //   name: "NEXTjs",
@@ -71,7 +77,7 @@ export default function HomepageLangCards() {
         return (<>
             <a href={cardInfo.link}>
 
-                <div className={`${styles.languageCard} ${styles[cardInfo.name]}`}>
+                <div className={`${styles.languageCard} ${styles[cardInfo.link]}`}>
                     <div className={styles.terminalIconDiv} >
                         <Terminal className={styles.terminalIcon} />
                     </div>
